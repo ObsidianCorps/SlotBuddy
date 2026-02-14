@@ -38,7 +38,7 @@
 
 /*
  *---------------------------------------------------------------
- * EASY!APPOINTMENTS CONFIGURATION
+ * SLOTBUDDY CONFIGURATION
  *---------------------------------------------------------------
  *
  * Include SlotBuddy configuration file so that it is available
