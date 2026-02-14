@@ -95,11 +95,10 @@ If you have problems installing or configuring the application visit the
 You can also report problems on the [issues page](https://github.com/ppa/SlotBuddy/issues)
 and help the development progress.
 
-## License 
+## Credits
+
+SlotBuddy is a fork of [Easy!Appointments](https://github.com/alextselegidis/easyappointments), originally created by [Alex Tselegidis](https://alextselegidis.com). We are grateful for his work in building and maintaining the original project.
+
+## License
 
 Code Licensed Under [GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) | Content Under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-
----
-
-Originally created by [Alex Tselegidis](https://alextselegidis.com).
-Now maintained by [SlotBuddy Contributors](https://github.com/ppa/SlotBuddy).
