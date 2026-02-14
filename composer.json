@@ -1,21 +1,25 @@
 {
-    "name": "alextselegidis/slotbuddy",
-    "description": "Open Source Web Scheduler",
+    "name": "slotbuddy/slotbuddy",
+    "description": "SlotBuddy - Online Appointment Scheduler",
     "version": "1.5.2",
-    "homepage": "https://slotbuddy.org",
+    "homepage": "https://github.com/ppa/SlotBuddy",
     "type": "project",
     "license": "GPL-3.0",
     "authors": [
         {
             "name": "Alex Tselegidis",
-            "email": "alextselegidis@gmail.com"
+            "email": "alextselegidis@gmail.com",
+            "role": "Original Author"
+        },
+        {
+            "name": "SlotBuddy Contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/alextselegidis/slotbuddy/issues",
+        "issues": "https://github.com/ppa/SlotBuddy/issues",
         "forum": "https://groups.google.com/forum/#!forum/slotbuddy",
-        "wiki": "https://slotbuddy.org/docs",
-        "source": "https://github.com/alextselegidis/slotbuddy"
+        "wiki": "https://github.com/ppa/SlotBuddy/wiki",
+        "source": "https://github.com/ppa/SlotBuddy"
     },
     "keywords": [
         "calendar",

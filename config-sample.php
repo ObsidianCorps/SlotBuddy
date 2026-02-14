@@ -3,10 +3,10 @@
  * SlotBuddy - Online Appointment Scheduler
  *
  * @package     SlotBuddy
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://slotbuddy.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.0.0
  * ---------------------------------------------------------------------------- */
 

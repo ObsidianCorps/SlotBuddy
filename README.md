@@ -1,7 +1,7 @@
 <h1 align="center">
     <br>
     <a href="https://slotbuddy.org">
-        <img src="https://raw.githubusercontent.com/alextselegidis/slotbuddy/develop/logo.png" alt="SlotBuddy" width="150">
+        <img src="https://raw.githubusercontent.com/ppa/SlotBuddy/main/logo.png" alt="SlotBuddy" width="150">
     </a>
     <br>
     SlotBuddy
@@ -15,9 +15,9 @@
 </h4>
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/alextselegidis/slotbuddy?style=for-the-badge">
-  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/alextselegidis/slotbuddy?style=for-the-badge">
-  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/alextselegidis/slotbuddy/total?style=for-the-badge">
+  <img alt="GitHub" src="https://img.shields.io/github/license/ppa/SlotBuddy?style=for-the-badge">
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/ppa/SlotBuddy?style=for-the-badge">
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/ppa/SlotBuddy/total?style=for-the-badge">
   <a href="https://discord.com/invite/UeeSkaw">
     <img alt="Chat On Discord" src="https://img.shields.io/badge/chat-on%20discord-7289da?style=for-the-badge&logo=discord&logoColor=white">
   </a>
@@ -60,7 +60,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/alextselegidis/slotbuddy.git
+$ git clone https://github.com/ppa/SlotBuddy.git
 
 # Go into the repository
 $ cd slotbuddy
@@ -92,7 +92,7 @@ That's it! You can now use SlotBuddy at your will.
 You will find the latest release at [slotbuddy.org](https://slotbuddy.org).
 If you have problems installing or configuring the application visit the
 [official support group](https://groups.google.com/forum/#!forum/slotbuddy).
-You can also report problems on the [issues page](https://github.com/alextselegidis/slotbuddy/issues)
+You can also report problems on the [issues page](https://github.com/ppa/SlotBuddy/issues)
 and help the development progress.
 
 ## License 
@@ -101,11 +101,5 @@ Code Licensed Under [GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) | C
 
 ---
 
-Website [alextselegidis.com](https://alextselegidis.com) &nbsp;&middot;&nbsp;
-GitHub [alextselegidis](https://github.com/alextselegidis) &nbsp;&middot;&nbsp;
-Twitter [@alextselegidis](https://twitter.com/AlexTselegidis)
-
-###### More Projects On Github
-###### ⇾ [Plainpad &middot; Self Hosted Note Taking App](https://github.com/alextselegidis/plainpad)
-###### ⇾ [Questionful &middot; Web Questionnaires Made Easy](https://github.com/alextselegidis/questionful)
-###### ⇾ [Integravy &middot; Service Orchestration At Your Fingertips](https://github.com/alextselegidis/integravy)
+Originally created by [Alex Tselegidis](https://alextselegidis.com).
+Now maintained by [SlotBuddy Contributors](https://github.com/ppa/SlotBuddy).

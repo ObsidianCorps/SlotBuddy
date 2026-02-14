@@ -59,7 +59,7 @@
 
             <div class="col-lg-6 mb-3">
                 <a class="btn btn-outline-secondary d-block"
-                   href="https://github.com/alextselegidis/slotbuddy/issues" target="_blank">
+                   href="https://github.com/ppa/SlotBuddy/issues" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     <?= lang('project_issues') ?>
                 </a>
@@ -80,10 +80,10 @@
             </div>
 
             <div class="col-lg-6 mb-3">
-                <a class="btn btn-outline-secondary d-block" href="https://slotbuddy.org/get-a-free-quote"
+                <a class="btn btn-outline-secondary d-block" href="https://github.com/ppa/SlotBuddy"
                    target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
-                    Customize E!A
+                    Customize SlotBuddy
                 </a>
             </div>
         </div>

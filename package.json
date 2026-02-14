@@ -1,8 +1,8 @@
 {
   "name": "slotbuddy",
-  "description": "Open Source Web Scheduler",
-  "homepage": "https://slotbuddy.org",
-  "author": "A.Tselegidis <alextselegidis@gmail.com>",
+  "description": "SlotBuddy - Online Appointment Scheduler",
+  "homepage": "https://github.com/ppa/SlotBuddy",
+  "author": "SlotBuddy Contributors",
   "license": "GPL-3.0",
   "keywords": [
     "calendar",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alextselegidis/slotbuddy.git"
+    "url": "git+https://github.com/ppa/SlotBuddy.git"
   },
   "bugs": {
-    "url": "https://github.com/alextselegidis/slotbuddy/issues"
+    "url": "https://github.com/ppa/SlotBuddy/issues"
   },
   "engines": {
     "node": ">=14"

@@ -6,7 +6,7 @@ SlotBuddy offers a flexible REST API that will enables you to handle all the inf
 
 ### Open API Specification (Swagger File)
 
-The project has a ready-made [OpenApi file](https://raw.githubusercontent.com/alextselegidis/slotbuddy/master/openapi.yml) you can download and use in order to create your client. 
+The project has a ready-made [OpenApi file](https://raw.githubusercontent.com/ppa/SlotBuddy/main/openapi.yml) you can download and use in order to create your client. 
 
 This file can also be imported into Postman, so that you can quickly get started making requests towards your installation. 
 

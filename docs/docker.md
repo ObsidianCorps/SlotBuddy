@@ -49,7 +49,7 @@ Phpldapadmin, an admin portal for openldap is available on `http://localhost:820
 
 **Attention:** This configuration is meant to make development easier. It is not intended to server as a production environment!
 
-A production image of SlotBuddy can be found at: https://github.com/alextselegidis/slotbuddy-docker
+A production image of SlotBuddy can be found at: https://github.com/ppa/SlotBuddy-docker
 
 *This document applies to SlotBuddy v1.5.1.*
 

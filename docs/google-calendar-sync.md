@@ -45,7 +45,7 @@ To enable the synchronization edit your root config.php file and update the Goog
 
 Google Developers – https://developers.google.com/google-apps/calendar
 
-E!A Support Group – https://groups.google.com/forum/#!forum/slotbuddy
+SlotBuddy Support Group – https://groups.google.com/forum/#!forum/slotbuddy
 
 *This document applies to SlotBuddy v1.5.1.*
 

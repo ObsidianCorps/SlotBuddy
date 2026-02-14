@@ -1,14 +1,14 @@
-<?php // Place this file in the root E!A directory and open it with the browser or execute in terminal.
+<?php // Place this file in the root SlotBuddy directory and open it with the browser or execute in terminal.
 
 /* ----------------------------------------------------------------------------
  * SlotBuddy - Patch Utility Script
  *
  * @package     SlotBuddyPatch
  * @version     1.0.0
- * @author      A.Tselegidis <info@alextselegidis.com>
- * @copyright   Copyright (c) 2013 - 2022, Alex Tselegidis
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://slotbuddy.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @support     SlotBuddy v1.x.x
  * ---------------------------------------------------------------------------- */
 

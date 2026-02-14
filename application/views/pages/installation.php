@@ -34,7 +34,7 @@
             <a href="https://slotbuddy.org/docs.html">Documentation</a> and
             <a href="https://groups.google.com/group/slotbuddy">Support Group</a> for getting help. You may also
             submit new issues on
-            <a href="https://github.com/alextselegidis/slotbuddy/issues">GitHub Issues</a>
+            <a href="https://github.com/ppa/SlotBuddy/issues">GitHub Issues</a>
             in order to help our development process.
         </p>
     </div>
