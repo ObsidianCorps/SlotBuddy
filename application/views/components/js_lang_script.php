@@ -1,19 +1,16 @@
 <script>
-    window.lang = (function () {
-        const lang = <?= json_encode(html_vars('language')) ?>;
+    window.__slotbuddy_lang = <?= json_encode(html_vars('language')) ?>;
 
-        return (key) => {
-            if (!key) {
-                return lang;
-            }
+    window.lang = function (key) {
+        if (!key) {
+            return window.__slotbuddy_lang;
+        }
 
-            if (!lang[key]) {
-                console.error(`Cannot find translation for requested key: "${key}"`);
-                return key;
-            }
+        if (!window.__slotbuddy_lang[key]) {
+            console.error(`Cannot find translation for requested key: "${key}"`);
+            return key;
+        }
 
-            return lang[key];
-        };
-    })();
+        return window.__slotbuddy_lang[key];
+    };
 </script>
-

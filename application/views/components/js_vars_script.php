@@ -1,14 +1,11 @@
 <script>
-    window.vars = (function () {
-        const vars = <?= json_encode(script_vars()) ?>;
+    window.__slotbuddy_vars = <?= json_encode(script_vars()) ?>;
 
-        return (key) => {
-            if (!key) {
-                return vars;
-            }
+    window.vars = function (key) {
+        if (!key) {
+            return window.__slotbuddy_vars;
+        }
 
-            return vars[key] || undefined;
-        };
-    })();
+        return window.__slotbuddy_vars[key] ?? null;
+    };
 </script>
-
