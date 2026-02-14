@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Google extends EA_Controller
+class Google extends SB_Controller
 {
     /**
      * Google constructor.
@@ -44,7 +44,7 @@ class Google extends EA_Controller
     public static function sync(?string $provider_id = null): void
     {
         try {
-            /** @var EA_Controller $CI */
+            /** @var SB_Controller $CI */
             $CI = get_instance();
 
             $CI->load->library('google_sync');

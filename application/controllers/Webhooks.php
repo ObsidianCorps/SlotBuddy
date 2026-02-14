@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Webhooks extends EA_Controller
+class Webhooks extends SB_Controller
 {
     public array $allowed_webhook_fields = [
         'id',

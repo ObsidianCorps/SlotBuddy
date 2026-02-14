@@ -25,9 +25,9 @@ use PHPMailer\PHPMailer\SMTP;
 class Email_messages
 {
     /**
-     * @var EA_Controller|CI_Controller
+     * @var SB_Controller|CI_Controller
      */
-    protected EA_Controller|CI_Controller $CI;
+    protected SB_Controller|CI_Controller $CI;
 
     /**
      * Email_messages constructor.

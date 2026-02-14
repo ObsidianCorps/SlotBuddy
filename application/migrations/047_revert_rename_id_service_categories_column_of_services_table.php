@@ -11,7 +11,7 @@
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Revert_rename_id_service_categories_column_of_services_table extends EA_Migration
+class Migration_Revert_rename_id_service_categories_column_of_services_table extends SB_Migration
 {
     /**
      * Upgrade method.

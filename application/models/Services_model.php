@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Services_model extends EA_Model
+class Services_model extends SB_Model
 {
     /**
      * @var array

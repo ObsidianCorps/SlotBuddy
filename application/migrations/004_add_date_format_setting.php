@@ -11,7 +11,7 @@
  * @since       v1.1.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_date_format_setting extends EA_Migration
+class Migration_Add_date_format_setting extends SB_Migration
 {
     /**
      * Upgrade method.

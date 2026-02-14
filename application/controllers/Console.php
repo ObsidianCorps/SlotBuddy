@@ -21,7 +21,7 @@ require_once __DIR__ . '/Caldav.php';
  *
  * Handles all the Console related operations.
  */
-class Console extends EA_Controller
+class Console extends SB_Controller
 {
     /**
      * Console constructor.

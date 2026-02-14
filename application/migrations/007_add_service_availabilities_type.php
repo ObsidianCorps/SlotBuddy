@@ -11,7 +11,7 @@
  * @since       v1.2.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_service_availabilities_type extends EA_Migration
+class Migration_Add_service_availabilities_type extends SB_Migration
 {
     /**
      * Upgrade method.

@@ -11,7 +11,7 @@
  * @since       v1.2.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_working_plan_exceptions_to_user_settings extends EA_Migration
+class Migration_Add_working_plan_exceptions_to_user_settings extends SB_Migration
 {
     /**
      * Upgrade method.

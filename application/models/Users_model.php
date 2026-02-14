@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Users_model extends EA_Model
+class Users_model extends SB_Model
 {
     /**
      * @var array

@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Secretaries_model extends EA_Model
+class Secretaries_model extends SB_Model
 {
     /**
      * @var array

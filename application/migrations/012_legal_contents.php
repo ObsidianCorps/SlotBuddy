@@ -11,7 +11,7 @@
  * @since       v1.3.2
  * ---------------------------------------------------------------------------- */
 
-class Migration_Legal_contents extends EA_Migration
+class Migration_Legal_contents extends SB_Migration
 {
     /**
      * Upgrade method.

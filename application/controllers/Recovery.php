@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Recovery extends EA_Controller
+class Recovery extends SB_Controller
 {
     /**
      * User constructor.

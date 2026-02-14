@@ -24,9 +24,9 @@ use Google\Service\Calendar\Events;
 class Google_sync
 {
     /**
-     * @var EA_Controller|CI_Controller
+     * @var SB_Controller|CI_Controller
      */
-    protected EA_Controller|CI_Controller $CI;
+    protected SB_Controller|CI_Controller $CI;
 
     /**
      * @var Google_Client

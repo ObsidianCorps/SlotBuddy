@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Captcha extends EA_Controller
+class Captcha extends SB_Controller
 {
     /**
      * Class Constructor

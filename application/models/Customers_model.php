@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Customers_model extends EA_Model
+class Customers_model extends SB_Model
 {
     /**
      * @var array

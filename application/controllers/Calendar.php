@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Calendar extends EA_Controller
+class Calendar extends SB_Controller
 {
     public array $allowed_customer_fields = [
         'id',

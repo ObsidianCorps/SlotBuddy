@@ -11,7 +11,7 @@
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_booking_field_settings extends EA_Migration
+class Migration_Add_booking_field_settings extends SB_Migration
 {
     /**
      * @var array

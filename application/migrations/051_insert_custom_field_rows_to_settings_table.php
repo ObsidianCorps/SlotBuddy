@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Insert_custom_field_rows_to_settings_table extends EA_Migration
+class Migration_Insert_custom_field_rows_to_settings_table extends SB_Migration
 {
     /**
      * @var int

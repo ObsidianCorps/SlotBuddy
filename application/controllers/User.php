@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class User extends EA_Controller
+class User extends SB_Controller
 {
     /**
      * User constructor.

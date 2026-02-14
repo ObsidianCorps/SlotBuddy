@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Api_settings extends EA_Controller
+class Api_settings extends SB_Controller
 {
     /**
      * Api_settings constructor.

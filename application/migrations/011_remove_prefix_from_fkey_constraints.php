@@ -11,7 +11,7 @@
  * @since       v1.3.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Remove_prefix_from_fkey_constraints extends EA_Migration
+class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
 {
     /**
      * Upgrade method.

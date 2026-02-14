@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Create_appointment_location_column extends EA_Migration
+class Migration_Create_appointment_location_column extends SB_Migration
 {
     /**
      * Upgrade method.

@@ -39,7 +39,7 @@
  *
  * @deprecated Since 1.5
  */
-class Backend extends EA_Controller
+class Backend extends SB_Controller
 {
     /**
      * Display the calendar page.

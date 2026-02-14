@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Privacy extends EA_Controller
+class Privacy extends SB_Controller
 {
     /**
      * Privacy constructor.

@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_timezone_to_users extends EA_Migration
+class Migration_Add_timezone_to_users extends SB_Migration
 {
     /**
      * Upgrade method.

@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Installation extends EA_Controller
+class Installation extends SB_Controller
 {
     /**
      * Installation constructor.

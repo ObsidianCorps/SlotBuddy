@@ -16,7 +16,7 @@
  *
  * @package Controllers
  */
-class Webhooks_api_v1 extends EA_Controller
+class Webhooks_api_v1 extends SB_Controller
 {
     /**
      * Webhooks_api_v1 constructor.

@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_secret_header_column_to_webhooks_table extends EA_Migration
+class Migration_Add_secret_header_column_to_webhooks_table extends SB_Migration
 {
     /**
      * Upgrade method.

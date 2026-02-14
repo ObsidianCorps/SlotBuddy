@@ -33,7 +33,7 @@
  */
 function config(array|string $key, mixed $default = null): mixed
 {
-    /** @var EA_Controller $CI */
+    /** @var SB_Controller $CI */
     $CI = &get_instance();
 
     if (empty($key)) {

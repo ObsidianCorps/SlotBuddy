@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Providers_model extends EA_Model
+class Providers_model extends SB_Model
 {
     /**
      * @var array

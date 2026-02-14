@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Consents extends EA_Controller
+class Consents extends SB_Controller
 {
     /**
      * Consents constructor.

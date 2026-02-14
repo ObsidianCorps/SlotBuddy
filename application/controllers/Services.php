@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Services extends EA_Controller
+class Services extends SB_Controller
 {
     public array $allowed_service_fields = [
         'id',

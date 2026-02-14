@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Add_require_phone_number_setting extends EA_Migration
+class Migration_Add_require_phone_number_setting extends SB_Migration
 {
     /**
      * Upgrade method.

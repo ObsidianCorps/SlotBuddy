@@ -18,7 +18,7 @@
  *
  * @package Models
  */
-class Admins_model extends EA_Model
+class Admins_model extends SB_Model
 {
     /**
      * @var array

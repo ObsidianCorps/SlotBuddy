@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-class Migration_Modify_sync_period_columns extends EA_Migration
+class Migration_Modify_sync_period_columns extends SB_Migration
 {
     /**
      * Upgrade method.

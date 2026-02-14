@@ -50,7 +50,7 @@ if (!function_exists('component')) {
      */
     function component(string $component, array $vars = [], bool $return = false): string|object
     {
-        /** @var EA_Controller $CI */
+        /** @var SB_Controller $CI */
         $CI = get_instance();
 
         return $CI->load->view('components/' . $component, $vars, $return);

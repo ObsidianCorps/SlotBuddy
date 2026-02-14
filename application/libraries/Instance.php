@@ -11,7 +11,7 @@
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/../core/EA_Migration.php';
+require_once __DIR__ . '/../core/SB_Migration.php';
 
 /**
  * Instance library.
@@ -23,9 +23,9 @@ require_once __DIR__ . '/../core/EA_Migration.php';
 class Instance
 {
     /**
-     * @var EA_Controller|CI_Controller
+     * @var SB_Controller|CI_Controller
      */
-    protected EA_Controller|CI_Controller $CI;
+    protected SB_Controller|CI_Controller $CI;
 
     /**
      * Installation constructor.

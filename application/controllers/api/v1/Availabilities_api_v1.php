@@ -16,7 +16,7 @@
  *
  * @package Controllers
  */
-class Availabilities_api_v1 extends EA_Controller
+class Availabilities_api_v1 extends SB_Controller
 {
     /**
      * Availabilities_api_v1 constructor.

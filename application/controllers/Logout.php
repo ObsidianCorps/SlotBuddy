@@ -18,7 +18,7 @@
  *
  * @package Controllers
  */
-class Logout extends EA_Controller
+class Logout extends SB_Controller
 {
     /**
      * Render the logout page.
