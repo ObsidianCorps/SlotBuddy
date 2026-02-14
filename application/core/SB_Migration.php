@@ -16,32 +16,32 @@ require_once BASEPATH . 'libraries/Migration.php';
 /**
  * Easy!Appointments migration.
  *
- * @property EA_Benchmark $benchmark
- * @property EA_Cache $cache
- * @property EA_Calendar $calendar
- * @property EA_Config $config
- * @property EA_DB_forge $dbforge
- * @property EA_DB_query_builder $db
- * @property EA_DB_utility $dbutil
- * @property EA_Email $email
- * @property EA_Encrypt $encrypt
- * @property EA_Encryption $encryption
- * @property EA_Exceptions $exceptions
- * @property EA_Hooks $hooks
- * @property EA_Input $input
- * @property EA_Lang $lang
- * @property EA_Loader $load
- * @property EA_Log $log
- * @property EA_Migration $migration
- * @property EA_Output $output
- * @property EA_Profiler $profiler
- * @property EA_Router $router
- * @property EA_Security $security
- * @property EA_Session $session
- * @property EA_Upload $upload
- * @property EA_URI $uri
+ * @property SB_Benchmark $benchmark
+ * @property SB_Cache $cache
+ * @property SB_Calendar $calendar
+ * @property SB_Config $config
+ * @property SB_DB_forge $dbforge
+ * @property SB_DB_query_builder $db
+ * @property SB_DB_utility $dbutil
+ * @property SB_Email $email
+ * @property SB_Encrypt $encrypt
+ * @property SB_Encryption $encryption
+ * @property SB_Exceptions $exceptions
+ * @property SB_Hooks $hooks
+ * @property SB_Input $input
+ * @property SB_Lang $lang
+ * @property SB_Loader $load
+ * @property SB_Log $log
+ * @property SB_Migration $migration
+ * @property SB_Output $output
+ * @property SB_Profiler $profiler
+ * @property SB_Router $router
+ * @property SB_Security $security
+ * @property SB_Session $session
+ * @property SB_Upload $upload
+ * @property SB_URI $uri
  */
-class EA_Migration extends CI_Migration
+class SB_Migration extends CI_Migration
 {
     /**
      * Get the current migration version.
