@@ -1,11 +1,11 @@
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
@@ -52,7 +52,7 @@ App.Utils.CalendarSync = (function () {
 
         const redirectUrl = App.Utils.Url.siteUrl('google/oauth_callback');
 
-        const windowHandle = window.open(authUrl, 'Easy!Appointments', 'width=800, height=600');
+        const windowHandle = window.open(authUrl, 'SlotBuddy', 'width=800, height=600');
 
         const authInterval = window.setInterval(() => {
             // When the browser redirects to the Google user consent page the "window.document" variable

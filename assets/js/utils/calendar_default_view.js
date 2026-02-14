@@ -1,11 +1,11 @@
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
@@ -318,7 +318,7 @@ App.Utils.CalendarDefaultView = (function () {
 
             $reloadAppointments.trigger('click');
 
-            window.localStorage.setItem('EasyAppointments.SelectFilterItem', $selectFilterItem.val());
+            window.localStorage.setItem('SlotBuddy.SelectFilterItem', $selectFilterItem.val());
         });
     }
 
@@ -1579,7 +1579,7 @@ App.Utils.CalendarDefaultView = (function () {
         // Add the page event listeners.
         addEventListeners();
 
-        const localSelectFilterItemValue = window.localStorage.getItem('EasyAppointments.SelectFilterItem');
+        const localSelectFilterItemValue = window.localStorage.getItem('SlotBuddy.SelectFilterItem');
 
         if (
             localSelectFilterItemValue &&

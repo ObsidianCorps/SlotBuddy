@@ -1,20 +1,20 @@
 <?php // Place this file in the root E!A directory and open it with the browser or execute in terminal.
 
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Patch Utility Script
+ * SlotBuddy - Patch Utility Script
  *
- * @package     EasyAppointmentsPatch
+ * @package     SlotBuddyPatch
  * @version     1.0.0
  * @author      A.Tselegidis <info@alextselegidis.com>
  * @copyright   Copyright (c) 2013 - 2022, Alex Tselegidis
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
- * @support     Easy!Appointments v1.x.x
+ * @link        https://slotbuddy.org
+ * @support     SlotBuddy v1.x.x
  * ---------------------------------------------------------------------------- */
 
 // Config
 
-define('FILES_JSON_URL', 'https://cdn.easyappointments.org/patch/files.json');
+define('FILES_JSON_URL', 'https://cdn.slotbuddy.org/patch/files.json');
 
 // Setup
 
@@ -32,7 +32,7 @@ function detect_local_version()
 
     if (!file_exists($config_file_path)) {
         die(
-            'Failed to detect the local Easy!Appointments version, please move the patch.php script in the root directory of your Easy!Appointments installation.'
+            'Failed to detect the local SlotBuddy version, please move the patch.php script in the root directory of your SlotBuddy installation.'
         );
     }
 
@@ -271,7 +271,7 @@ function get_new_patch_filenames($new_patches)
 
 // Run
 
-echo LINE_BREAK . '➜ Easy!Appointments - Patch Utility Script' . LINE_BREAK . LINE_BREAK;
+echo LINE_BREAK . '➜ SlotBuddy - Patch Utility Script' . LINE_BREAK . LINE_BREAK;
 
 $local_version = detect_local_version();
 

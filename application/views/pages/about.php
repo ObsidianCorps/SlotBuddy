@@ -6,10 +6,10 @@
     <div id="about" class="col-lg-8 offset-lg-2">
 
         <div class="text-center my-5">
-            <img src="<?= base_url('assets/img/logo.png') ?>" alt="Easy!Appointments Logo" class="mb-5">
+            <img src="<?= base_url('assets/img/logo.png') ?>" alt="SlotBuddy Logo" class="mb-5">
 
             <h3>
-                Easy!Appointments
+                SlotBuddy
             </h3>
             <h6 class="text-primary">
                 Online Appointment Scheduler
@@ -43,7 +43,7 @@
 
         <div class="row mb-5">
             <div class="col-lg-6 mb-3">
-                <a class="btn btn-outline-secondary d-block" href="https://easyappointments.org" target="_blank">
+                <a class="btn btn-outline-secondary d-block" href="https://slotbuddy.org" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     <?= lang('official_website') ?>
                 </a>
@@ -51,7 +51,7 @@
 
             <div class="col-lg-6 mb-3">
                 <a class="btn btn-outline-secondary d-block"
-                   href="https://groups.google.com/forum/#!forum/easy-appointments" target="_blank">
+                   href="https://groups.google.com/forum/#!forum/slotbuddy" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     <?= lang('support_group') ?>
                 </a>
@@ -59,28 +59,28 @@
 
             <div class="col-lg-6 mb-3">
                 <a class="btn btn-outline-secondary d-block"
-                   href="https://github.com/alextselegidis/easyappointments/issues" target="_blank">
+                   href="https://github.com/alextselegidis/slotbuddy/issues" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     <?= lang('project_issues') ?>
                 </a>
             </div>
 
             <div class="col-lg-6 mb-3">
-                <a class="btn btn-outline-secondary d-block" href="https://facebook.com/easyappts" target="_blank">
+                <a class="btn btn-outline-secondary d-block" href="https://facebook.com/slotbuddy" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     Facebook
                 </a>
             </div>
 
             <div class="col-lg-6 mb-3">
-                <a class="btn btn-outline-secondary d-block" href="https://x.com/easyappts" target="_blank">
+                <a class="btn btn-outline-secondary d-block" href="https://x.com/slotbuddy" target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     X.com
                 </a>
             </div>
 
             <div class="col-lg-6 mb-3">
-                <a class="btn btn-outline-secondary d-block" href="https://easyappointments.org/get-a-free-quote"
+                <a class="btn btn-outline-secondary d-block" href="https://slotbuddy.org/get-a-free-quote"
                    target="_blank">
                     <i class="fas fa-external-link-alt me-2"></i>
                     Customize E!A

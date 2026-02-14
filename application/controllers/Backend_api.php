@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.0.0
  * ---------------------------------------------------------------------------- */
 
@@ -20,9 +20,9 @@
 | providing additional information on how to migrate your code to the latest   
 | codebase state. 
 |
-| Visit the Easy!Appointments Developers website for more information:  
+| Visit the SlotBuddy Developers website for more information:  
 |
-|   https://developers.easyappointments.org
+|   https://developers.slotbuddy.org
 |
 | Since v1.5, the methods of this controller were ported to standalone controller 
 | classes, that can both handle the page rendering and all asynchronous HTTP  

@@ -1,8 +1,8 @@
 {
-    "name": "alextselegidis/easyappointments",
+    "name": "alextselegidis/slotbuddy",
     "description": "Open Source Web Scheduler",
     "version": "1.5.2",
-    "homepage": "https://easyappointments.org",
+    "homepage": "https://slotbuddy.org",
     "type": "project",
     "license": "GPL-3.0",
     "authors": [
@@ -12,10 +12,10 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/alextselegidis/easyappointments/issues",
-        "forum": "https://groups.google.com/forum/#!forum/easy-appointments",
-        "wiki": "https://easyappointments.org/docs",
-        "source": "https://github.com/alextselegidis/easyappointments"
+        "issues": "https://github.com/alextselegidis/slotbuddy/issues",
+        "forum": "https://groups.google.com/forum/#!forum/slotbuddy",
+        "wiki": "https://slotbuddy.org/docs",
+        "source": "https://github.com/alextselegidis/slotbuddy"
     },
     "keywords": [
         "calendar",

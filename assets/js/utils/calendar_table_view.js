@@ -1,11 +1,11 @@
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 

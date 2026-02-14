@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.4.0
  * ---------------------------------------------------------------------------- */
 
@@ -16,7 +16,7 @@ require_once __DIR__ . '/../core/SB_Migration.php';
 /**
  * Instance library.
  *
- * Handles all Easy!Appointments instance related functionality.
+ * Handles all SlotBuddy instance related functionality.
  *
  * @package Libraries
  */
@@ -176,7 +176,7 @@ class Instance
 
         $contents = $this->CI->dbutil->backup();
 
-        $filename = 'easyappointments-backup-' . date('Y-m-d-His') . '.gz';
+        $filename = 'slotbuddy-backup-' . date('Y-m-d-His') . '.gz';
 
         write_file(rtrim($path, '/') . '/' . $filename, $contents);
     }

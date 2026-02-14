@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.3.2
  * ---------------------------------------------------------------------------- */
 
@@ -48,7 +48,7 @@ class Console extends SB_Controller
     /**
      * Perform a console installation.
      *
-     * Use this method to install Easy!Appointments directly from the terminal.
+     * Use this method to install SlotBuddy directly from the terminal.
      *
      * Usage:
      *
@@ -70,7 +70,7 @@ class Console extends SB_Controller
     /**
      * Migrate the database to the latest state.
      *
-     * Use this method to upgrade an Easy!Appointments instance to the latest database state.
+     * Use this method to upgrade an SlotBuddy instance to the latest database state.
      *
      * Notice:
      *
@@ -108,7 +108,7 @@ class Console extends SB_Controller
     /**
      * Create a database backup file.
      *
-     * Use this method to back up your Easy!Appointments data.
+     * Use this method to back up your SlotBuddy data.
      *
      * Usage:
      *
@@ -126,7 +126,7 @@ class Console extends SB_Controller
     /**
      * Trigger the synchronization of all provider calendars with Google Calendar.
      *
-     * Use this method in a cronjob to automatically sync events between Easy!Appointments and Google Calendar.
+     * Use this method in a cronjob to automatically sync events between SlotBuddy and Google Calendar.
      *
      * Notice:
      *
@@ -168,7 +168,7 @@ class Console extends SB_Controller
     {
         $help = [
             '',
-            'Easy!Appointments ' . config('version'),
+            'SlotBuddy ' . config('version'),
             '',
             'Usage:',
             '',

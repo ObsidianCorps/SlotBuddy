@@ -1,21 +1,21 @@
 openapi: 3.0.3
 info:
-  title: Easy!Appointments API
+  title: SlotBuddy API
   version: 1.0.0
-  description: These are the OpenAPI specs that describe the REST API of Easy!Appointments.
-  termsOfService: https://easyappointments.org/terms-and-conditions
+  description: These are the OpenAPI specs that describe the REST API of SlotBuddy.
+  termsOfService: https://slotbuddy.org/terms-and-conditions
   contact:
-    name: Easy!Appointments
-    url: https://easyappointments.org
-    email: info@easyappointments.org
+    name: SlotBuddy
+    url: https://slotbuddy.org
+    email: info@slotbuddy.org
   license:
     name: GPL-3.0
     url: https://www.gnu.org/licenses/gpl-3.0.en.html
 externalDocs:
-  description: Find out more about Easy!Appointments
-  url: https://easyappointments.org/docs.html
+  description: Find out more about SlotBuddy
+  url: https://slotbuddy.org/docs.html
 servers:
-  - url: https://demo.easyappointments.org/index.php/api/v1/
+  - url: https://demo.slotbuddy.org/index.php/api/v1/
   - url: http://localhost/index.php/api/v1/
 tags:
   - name: admins

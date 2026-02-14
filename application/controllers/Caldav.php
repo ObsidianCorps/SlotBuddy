@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - Online Appointment Scheduler
+ * SlotBuddy - Online Appointment Scheduler
  *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) Alex Tselegidis
+ * @package     SlotBuddy
+ * @author      SlotBuddy Contributors
+ * @copyright   Copyright (c) Alex Tselegidis, SlotBuddy Contributors
  * @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        https://easyappointments.org
+ * @link        https://github.com/ppa/SlotBuddy
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
@@ -189,10 +189,10 @@ class Caldav extends SB_Controller
                 $caldav_event = $CI->caldav_sync->get_event($provider, $local_event['id_caldav_calendar']);
 
                 if (!$caldav_event || $caldav_event['status'] === 'CANCELLED') {
-                    throw new Exception('Event is cancelled, remove the record from Easy!Appointments.');
+                    throw new Exception('Event is cancelled, remove the record from SlotBuddy.');
                 }
 
-                // If CalDAV Calendar event is different from Easy!Appointments appointment then update Easy!Appointments record.
+                // If CalDAV Calendar event is different from SlotBuddy appointment then update SlotBuddy record.
                 $local_event_start = strtotime($local_event['start_datetime']);
                 $local_event_end = strtotime($local_event['end_datetime']);
 
@@ -211,14 +211,14 @@ class Caldav extends SB_Controller
                     $events_model->save($local_event);
                 }
             } catch (Throwable) {
-                // Appointment not found on CalDAV Calendar, delete from Easy!Appointments.
+                // Appointment not found on CalDAV Calendar, delete from SlotBuddy.
                 $events_model->delete($local_event['id']);
 
                 $local_event['id_caldav_calendar'] = null;
             }
         }
 
-        // Add CalDAV Calendar events that do not exist in Easy!Appointments.
+        // Add CalDAV Calendar events that do not exist in SlotBuddy.
 
         try {
             $caldav_events = $CI->caldav_sync->get_sync_events($provider, $start_date_time, $end_date_time);
@@ -275,7 +275,7 @@ class Caldav extends SB_Controller
                 continue;
             }
 
-            // Record doesn't exist in the Easy!Appointments, so add the event now.
+            // Record doesn't exist in the SlotBuddy, so add the event now.
 
             $local_event = [
                 'start_datetime' => $caldav_event['start_datetime'],

@@ -2,11 +2,11 @@
 
 ## Introduction 
 
-Easy!Appointments offers a flexible REST API that will enables you to handle all the information of your installations through HTTP requests. The API is using JSON as its data transaction format and features many best practices in order to make the resources easily consumable. 
+SlotBuddy offers a flexible REST API that will enables you to handle all the information of your installations through HTTP requests. The API is using JSON as its data transaction format and features many best practices in order to make the resources easily consumable. 
 
 ### Open API Specification (Swagger File)
 
-The project has a ready-made [OpenApi file](https://raw.githubusercontent.com/alextselegidis/easyappointments/master/openapi.yml) you can download and use in order to create your client. 
+The project has a ready-made [OpenApi file](https://raw.githubusercontent.com/alextselegidis/slotbuddy/master/openapi.yml) you can download and use in order to create your client. 
 
 This file can also be imported into Postman, so that you can quickly get started making requests towards your installation. 
 
@@ -448,7 +448,7 @@ You can also try the GET requests with your browser by navigating to the respect
 
 ## API Roadmap 
 
-Although the current state should be sufficient for working with the application data there are some other features of that will make the consume more flexible and powerful. These will be added gradually with the future releases of Easy!Appointments. 
+Although the current state should be sufficient for working with the application data there are some other features of that will make the consume more flexible and powerful. These will be added gradually with the future releases of SlotBuddy. 
 
 [ ] Add auto-generated links whenever external resource IDs are provided.
 
@@ -498,6 +498,6 @@ fastcgi_param PHP_AUTH_PW $http_authorization;
 
 [[Source]](http://serverfault.com/a/520943)
 
-*This document applies to Easy!Appointments v1.5.1.*
+*This document applies to SlotBuddy v1.5.1.*
 
 [Back](readme.md)
