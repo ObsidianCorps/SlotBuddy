@@ -1,2 +1,4 @@
 import './css/app.css'
-console.log('[SlotBuddy] Account loaded')
+import { initDarkMode } from './lib/dark-mode.js'
+
+initDarkMode()

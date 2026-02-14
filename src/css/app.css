@@ -32,7 +32,7 @@
         @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5
                text-sm font-medium text-white
                bg-accent hover:bg-accent-600 active:bg-accent-700
-               focus:outline-none focus:ring-2 focus:ring-accent/50
+               focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50
                transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
     }
 
@@ -43,7 +43,7 @@
                border border-gray-300 dark:border-gray-600
                bg-white dark:bg-gray-800
                hover:bg-gray-50 dark:hover:bg-gray-700
-               focus:outline-none focus:ring-2 focus:ring-accent/50
+               focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50
                transition-colors;
     }
 
@@ -52,7 +52,7 @@
                text-sm font-medium
                text-gray-600 dark:text-gray-300
                hover:bg-gray-100 dark:hover:bg-gray-800
-               focus:outline-none focus:ring-2 focus:ring-accent/50
+               focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50
                transition-colors;
     }
 
@@ -82,8 +82,9 @@
     }
 
     .sb-nav-active {
-        @apply bg-accent/10 text-accent dark:text-accent
+        @apply text-accent dark:text-accent
                border-l-2 border-accent;
+        background-color: color-mix(in srgb, var(--accent, #6366f1) 10%, transparent);
     }
 
     .sidebar-collapsed .sidebar-label {
