@@ -1,2 +1,6 @@
 import './css/app.css'
-console.log('[SlotBuddy] Booking loaded')
+import { initDarkMode } from './lib/dark-mode.js'
+import { initialize as initBooking } from './pages/booking.js'
+
+initDarkMode()
+document.addEventListener('DOMContentLoaded', initBooking)
