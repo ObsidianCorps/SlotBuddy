@@ -2,43 +2,43 @@
 
 <?php section('content'); ?>
 
-<div id="matomo-analytics-settings-page" class="container backend-page">
-    <div class="row">
-        <div class="col-sm-3 offset-sm-1">
+<div id="matomo-analytics-settings-page" class="backend-page">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-3 lg:col-start-2">
             <?php component('settings_nav'); ?>
         </div>
-        <div id="matomo-analytics-settings" class="col-sm-6">
+        <div id="matomo-analytics-settings" class="lg:col-span-6">
             <form>
                 <fieldset>
-                    <div class="d-flex justify-content-between align-items-center border-bottom mb-4 py-2">
-                        <h4 class="text-black-50 mb-0 fw-light">
+                    <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-800 mb-4 py-2">
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-0 font-light">
                             <?= lang('matomo_analytics') ?>
                         </h4>
 
                         <div>
-                            <a href="<?= site_url('integrations') ?>" class="btn btn-outline-primary me-2">
-                                <i class="fas fa-chevron-left me-2"></i>
+                            <a href="<?= site_url('integrations') ?>" class="sb-btn-secondary mr-2">
+                                <i class="fas fa-chevron-left mr-2"></i>
                                 <?= lang('back') ?>
                             </a>
 
                             <?php if (can('edit', PRIV_SYSTEM_SETTINGS)): ?>
-                                <button type="button" id="save-settings" class="btn btn-primary">
-                                    <i class="fas fa-check-square me-2"></i>
+                                <button type="button" id="save-settings" class="sb-btn-primary">
+                                    <i class="fas fa-check-square mr-2"></i>
                                     <?= lang('save') ?>
                                 </button>
                             <?php endif; ?>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-12">
+                    <div>
+                        <div>
                             <div class="mb-3">
-                                <label class="form-label" for="matomo-analytics-url">
+                                <label class="sb-label" for="matomo-analytics-url">
                                     <?= lang('matomo_analytics_url') ?>
                                 </label>
                                 <input id="matomo-analytics-url" placeholder="//example.org/url/to/matomo/"
-                                       data-field="matomo_analytics_url" class="form-control">
-                                <div class="form-text text-muted">
+                                       data-field="matomo_analytics_url" class="sb-input">
+                                <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                                     <small>
                                         <?= lang('matomo_analytics_url_hint') ?>
                                     </small>
@@ -46,12 +46,12 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label" for="matomo-analytics-site-id">
+                                <label class="sb-label" for="matomo-analytics-site-id">
                                     <?= lang('matomo_analytics_site_id') ?>
                                 </label>
                                 <input id="matomo-analytics-site-id" data-field="matomo_analytics_site_id"
-                                       class="form-control">
-                                <div class="form-text text-muted">
+                                       class="sb-input">
+                                <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                                     <small>
                                         <?= lang('matomo_analytics_site_id_hint') ?>
                                     </small>

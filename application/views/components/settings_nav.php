@@ -1,35 +1,25 @@
-<h4 class=" text-black-50 py-3 mb-3 border-bottom fw-light">
+<h4 class="text-gray-500 dark:text-gray-400 py-3 mb-3 border-b border-gray-200 dark:border-gray-800 font-light">
     <?= lang('settings') ?>
 </h4>
 
-<ul id="settings-nav" class="nav flex-column">
-    <li class="nav-item mb-3">
-        <a class="nav-link px-0 py-2" href="<?= site_url('general_settings') ?>">
-            <?= lang('general_settings') ?>
-        </a>
-    </li>
+<nav id="settings-nav" class="flex flex-col gap-1">
+    <a class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="<?= site_url('general_settings') ?>">
+        <?= lang('general_settings') ?>
+    </a>
 
-    <li class="nav-item mb-3">
-        <a class="nav-link px-0 py-2" href="<?= site_url('booking_settings') ?>">
-            <?= lang('booking_settings') ?>
-        </a>
-    </li>
+    <a class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="<?= site_url('booking_settings') ?>">
+        <?= lang('booking_settings') ?>
+    </a>
 
-    <li class="nav-item mb-3">
-        <a class="nav-link px-0 py-2" href="<?= site_url('business_settings') ?>">
-            <?= lang('business_logic') ?>
-        </a>
-    </li>
+    <a class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="<?= site_url('business_settings') ?>">
+        <?= lang('business_logic') ?>
+    </a>
 
-    <li class="nav-item mb-3">
-        <a class="nav-link px-0 py-2" href="<?= site_url('legal_settings') ?>">
-            <?= lang('legal_contents') ?>
-        </a>
-    </li>
+    <a class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="<?= site_url('legal_settings') ?>">
+        <?= lang('legal_contents') ?>
+    </a>
 
-    <li class="nav-item mb-3">
-        <a class="nav-link px-0 py-2" href="<?= site_url('integrations') ?>">
-            <?= lang('integrations') ?>
-        </a>
-    </li>
-</ul>
+    <a class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="<?= site_url('integrations') ?>">
+        <?= lang('integrations') ?>
+    </a>
+</nav>

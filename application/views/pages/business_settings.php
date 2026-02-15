@@ -2,31 +2,31 @@
 
 <?php section('content'); ?>
 
-<div id="business-logic-page" class="container backend-page">
+<div id="business-logic-page" class="backend-page">
     <div id="business-logic">
-        <div class="row">
-            <div class="col-sm-3 offset-sm-1">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-3 lg:col-start-2">
                 <?php component('settings_nav'); ?>
             </div>
-            <div class="col-sm-6">
+            <div class="lg:col-span-6">
                 <form>
                     <fieldset>
-                        <div class="d-flex justify-content-between align-items-center border-bottom mb-4 py-2">
-                            <h4 class="text-black-50 mb-0 fw-light">
+                        <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-800 mb-4 py-2">
+                            <h4 class="text-gray-500 dark:text-gray-400 mb-0 font-light">
                                 <?= lang('business_logic') ?>
                             </h4>
 
                             <?php if (can('edit', PRIV_SYSTEM_SETTINGS)): ?>
-                                <button type="button" id="save-settings" class="btn btn-primary">
-                                    <i class="fas fa-check-square me-2"></i>
+                                <button type="button" id="save-settings" class="sb-btn-primary">
+                                    <i class="fas fa-check-square mr-2"></i>
                                     <?= lang('save') ?>
                                 </button>
                             <?php endif; ?>
                         </div>
 
-                        <h5 class="text-black-50 mb-3 fw-light"><?= lang('working_plan') ?></h5>
+                        <h5 class="text-gray-500 dark:text-gray-400 mb-3 font-light"><?= lang('working_plan') ?></h5>
 
-                        <p class="form-text text-muted mb-4">
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                             <?= lang('edit_working_plan_hint') ?>
                         </p>
 
@@ -41,22 +41,22 @@
                             <tbody><!-- Dynamic Content --></tbody>
                         </table>
 
-                        <div class="text-end mb-5">
-                            <button class="btn btn-outline-secondary" id="apply-global-working-plan" type="button">
+                        <div class="text-right mb-5">
+                            <button class="sb-btn-secondary" id="apply-global-working-plan" type="button">
                                 <i class="fas fa-check"></i>
                                 <?= lang('apply_to_all_providers') ?>
                             </button>
                         </div>
 
-                        <h5 class="text-black-50 mb-3 fw-light"><?= lang('breaks') ?></h5>
+                        <h5 class="text-gray-500 dark:text-gray-400 mb-3 font-light"><?= lang('breaks') ?></h5>
 
-                        <p class="form-text text-muted">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
                             <?= lang('edit_breaks_hint') ?>
                         </p>
 
                         <div class="mt-2">
-                            <button type="button" class="add-break btn btn-primary">
-                                <i class="fas fa-plus-square me-2"></i>
+                            <button type="button" class="add-break sb-btn-primary">
+                                <i class="fas fa-plus-square mr-2"></i>
                                 <?= lang('add_break') ?>
                             </button>
                         </div>
@@ -76,59 +76,59 @@
                         </table>
 
                         <?php if (can('view', PRIV_BLOCKED_PERIODS)): ?>
-                            <h5 class="text-black-50 mb-3 fw-light"><?= lang('blocked_periods') ?></h5>
+                            <h5 class="text-gray-500 dark:text-gray-400 mb-3 font-light"><?= lang('blocked_periods') ?></h5>
 
-                            <p class="form-text text-muted">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
                                 <?= lang('blocked_periods_hint') ?>
                             </p>
 
                             <div class="mb-5">
-                                <a href="<?= site_url('blocked_periods') ?>" class="btn btn-primary">
-                                    <i class="fas fa-cogs me-2"></i>
+                                <a href="<?= site_url('blocked_periods') ?>" class="sb-btn-primary">
+                                    <i class="fas fa-cogs mr-2"></i>
                                     <?= lang('configure') ?>
                                 </a>
                             </div>
                         <?php endif; ?>
 
-                        <h5 class="text-black-50 mb-3 fw-light"><?= lang(
+                        <h5 class="text-gray-500 dark:text-gray-400 mb-3 font-light"><?= lang(
                             'allow_rescheduling_cancellation_before',
                         ) ?></h5>
 
                         <div class="mb-5">
-                            <label for="book-advance-timeout" class="form-label">
+                            <label for="book-advance-timeout" class="sb-label">
                                 <?= lang('timeout_minutes') ?>
                             </label>
-                            <input id="book-advance-timeout" data-field="book_advance_timeout" class="form-control"
+                            <input id="book-advance-timeout" data-field="book_advance_timeout" class="sb-input"
                                    type="number" min="15">
-                            <div class="form-text text-muted">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                                 <small>
                                     <?= lang('book_advance_timeout_hint') ?>
                                 </small>
                             </div>
                         </div>
 
-                        <h5 class="text-black-50 mb-3 fw-light"><?= lang('future_booking_limit') ?></h5>
+                        <h5 class="text-gray-500 dark:text-gray-400 mb-3 font-light"><?= lang('future_booking_limit') ?></h5>
 
                         <div class="mb-5">
-                            <label for="future-booking-limit" class="form-label">
+                            <label for="future-booking-limit" class="sb-label">
                                 <?= lang('limit_days') ?>
                             </label>
-                            <input id="future-booking-limit" data-field="future_booking_limit" class="form-control"
+                            <input id="future-booking-limit" data-field="future_booking_limit" class="sb-input"
                                    type="number" min="15">
-                            <div class="form-text text-muted">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                                 <small>
                                     <?= lang('future_booking_limit_hint') ?>
                                 </small>
                             </div>
                         </div>
 
-                        <div class="d-flex justify-content-start align-items-center mb-3">
-                            <h5 class="text-black-50 mb-0 me-3 fw-light">
+                        <div class="flex justify-start items-center mb-3">
+                            <h5 class="text-gray-500 dark:text-gray-400 mb-0 mr-3 font-light">
                                 <?= lang('appointment_status_options') ?>
                             </h5>
                         </div>
 
-                        <p class="form-text text-muted mb-4">
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                             <?= lang('appointment_status_options_info') ?>
                         </p>
 
@@ -155,4 +155,3 @@
 <script src="<?= asset_url('assets/js/pages/business_settings.js') ?>"></script>
 
 <?php end_section('scripts'); ?>
-
