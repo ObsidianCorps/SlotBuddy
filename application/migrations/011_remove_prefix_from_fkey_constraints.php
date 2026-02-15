@@ -19,70 +19,70 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
     public function up(): void
     {
         // Drop table constraints.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_3`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_4`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('users') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '` DROP FOREIGN KEY `' .
@@ -91,7 +91,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
         );
 
         // Add table constraints again without the "ea" prefix.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '`
@@ -112,7 +112,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
             ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '`
@@ -128,7 +128,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
             ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '`
@@ -139,7 +139,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
             ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '`
@@ -155,7 +155,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
             ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '`
@@ -166,7 +166,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
             ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '`
@@ -184,45 +184,45 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
     public function down(): void
     {
         // Drop table constraints.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' . $this->db->dbprefix('appointments') . '` DROP FOREIGN KEY `appointments_services`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' . $this->db->dbprefix('appointments') . '` DROP FOREIGN KEY `appointments_users_customer`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' . $this->db->dbprefix('appointments') . '` DROP FOREIGN KEY `appointments_users_provider`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `secretaries_users_secretary`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `secretaries_users_provider`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `services_providers_users_provider`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `services_providers_services`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' . $this->db->dbprefix('services') . '` DROP FOREIGN KEY `services_service_categories`',
         );
-        $this->db->query('ALTER TABLE `' . $this->db->dbprefix('users') . '` DROP FOREIGN KEY `users_roles`');
-        $this->db->query(
+        $this->execute('ALTER TABLE `' . $this->db->dbprefix('users') . '` DROP FOREIGN KEY `users_roles`');
+        $this->execute(
             'ALTER TABLE `' . $this->db->dbprefix('user_settings') . '` DROP FOREIGN KEY `user_settings_users`',
         );
 
         // Add table constraints again.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '`
@@ -243,7 +243,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '`
@@ -259,7 +259,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '`
@@ -270,7 +270,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
                 '` (`id`) ON DELETE SET NULL ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '`
@@ -286,7 +286,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '`
@@ -297,7 +297,7 @@ class Migration_Remove_prefix_from_fkey_constraints extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '`

@@ -19,70 +19,70 @@ class Migration_Change_column_types extends SB_Migration
     public function up(): void
     {
         // Drop table constraints.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_3`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_4`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('users') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '` DROP FOREIGN KEY `' .
@@ -261,7 +261,7 @@ class Migration_Change_column_types extends SB_Migration
         $this->dbforge->modify_column('user_settings', $fields);
 
         // Add table constraints again.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '`
@@ -282,7 +282,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '`
@@ -298,7 +298,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '`
@@ -309,7 +309,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE SET NULL ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '`
@@ -325,7 +325,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '`
@@ -336,7 +336,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '`
@@ -348,7 +348,7 @@ class Migration_Change_column_types extends SB_Migration
         );
 
         // Change charset of ' . $this->db->dbprefix('secretaries_providers') . ' table for databases created with EA! 1.2.1 version
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE ' . $this->db->dbprefix('secretaries_providers') . ' CONVERT TO CHARACTER SET utf8',
         );
     }
@@ -359,70 +359,70 @@ class Migration_Change_column_types extends SB_Migration
     public function down(): void
     {
         // Drop table constraints.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_3`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_4`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('users') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '` DROP FOREIGN KEY `' .
@@ -601,7 +601,7 @@ class Migration_Change_column_types extends SB_Migration
         $this->dbforge->modify_column('user_settings', $fields);
 
         // Add database constraints.
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '`
@@ -622,7 +622,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '`
@@ -638,7 +638,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '`
@@ -649,7 +649,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE SET NULL ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '`
@@ -665,7 +665,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '`
@@ -676,7 +676,7 @@ class Migration_Change_column_types extends SB_Migration
                 '` (`id`) ON DELETE CASCADE ON UPDATE CASCADE',
         );
 
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '`

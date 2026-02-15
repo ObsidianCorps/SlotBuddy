@@ -381,7 +381,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         $this->dbforge->add_key('id_users', true);
         $this->dbforge->create_table('user_settings', true, ['engine' => 'InnoDB']);
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
@@ -404,7 +404,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ',
         );
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
@@ -422,7 +422,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ',
         );
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('services') .
@@ -435,7 +435,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ',
         );
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
@@ -453,7 +453,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ',
         );
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('users') .
@@ -466,7 +466,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ',
         );
 
-        $this->db->query(
+        $this->execute(
             '
             ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
@@ -545,70 +545,70 @@ class Migration_Specific_calendar_sync extends SB_Migration
      */
     public function down(): void
     {
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_3`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('appointments') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('appointments') .
                 '_ibfk_4`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('secretaries_providers') .
                 '` DROP FOREIGN KEY `fk_' .
                 $this->db->dbprefix('secretaries_providers') .
                 '_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services_providers') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services_providers') .
                 '_ibfk_2`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('services') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('services') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('users') .
                 '` DROP FOREIGN KEY `' .
                 $this->db->dbprefix('users') .
                 '_ibfk_1`',
         );
-        $this->db->query(
+        $this->execute(
             'ALTER TABLE `' .
                 $this->db->dbprefix('user_settings') .
                 '` DROP FOREIGN KEY `' .

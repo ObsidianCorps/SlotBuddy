@@ -49,21 +49,41 @@
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default']['hostname'] = Config::DB_HOST;
-$db['default']['username'] = Config::DB_USERNAME;
-$db['default']['password'] = Config::DB_PASSWORD;
-$db['default']['database'] = Config::DB_NAME;
-$db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = 'ea_';
-$db['default']['pconnect'] = FALSE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8mb4';
-$db['default']['dbcollat'] = 'utf8mb4_unicode_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
+$db_driver = defined('Config::DB_DRIVER') ? Config::DB_DRIVER : 'mysqli';
+
+if ($db_driver === 'sqlite3') {
+    $db['default']['hostname'] = APPPATH . '../storage/database.sqlite';
+    $db['default']['username'] = '';
+    $db['default']['password'] = '';
+    $db['default']['database'] = '';
+    $db['default']['dbdriver'] = 'sqlite3';
+    $db['default']['dbprefix'] = 'ea_';
+    $db['default']['pconnect'] = FALSE;
+    $db['default']['db_debug'] = TRUE;
+    $db['default']['cache_on'] = FALSE;
+    $db['default']['cachedir'] = '';
+    $db['default']['char_set'] = 'utf8';
+    $db['default']['dbcollat'] = '';
+    $db['default']['swap_pre'] = '';
+    $db['default']['autoinit'] = TRUE;
+    $db['default']['stricton'] = FALSE;
+} else {
+    $db['default']['hostname'] = Config::DB_HOST;
+    $db['default']['username'] = Config::DB_USERNAME;
+    $db['default']['password'] = Config::DB_PASSWORD;
+    $db['default']['database'] = Config::DB_NAME;
+    $db['default']['dbdriver'] = 'mysqli';
+    $db['default']['dbprefix'] = 'ea_';
+    $db['default']['pconnect'] = FALSE;
+    $db['default']['db_debug'] = TRUE;
+    $db['default']['cache_on'] = FALSE;
+    $db['default']['cachedir'] = '';
+    $db['default']['char_set'] = 'utf8mb4';
+    $db['default']['dbcollat'] = 'utf8mb4_unicode_ci';
+    $db['default']['swap_pre'] = '';
+    $db['default']['autoinit'] = TRUE;
+    $db['default']['stricton'] = FALSE;
+}
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

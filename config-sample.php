@@ -38,6 +38,7 @@ class Config
     // DATABASE SETTINGS
     // ------------------------------------------------------------------------
 
+    const DB_DRIVER = 'mysqli'; // 'mysqli' for MySQL, 'sqlite3' for SQLite
     const DB_HOST = 'mysql';
     const DB_NAME = 'slotbuddy';
     const DB_USERNAME = 'user';

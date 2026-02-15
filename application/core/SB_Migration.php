@@ -52,4 +52,24 @@ class SB_Migration extends CI_Migration
     {
         return $this->_get_version();
     }
+
+    /**
+     * Execute a raw SQL query, skipping FK-related ALTER TABLE statements on SQLite.
+     *
+     * SQLite does not support ALTER TABLE ADD/DROP FOREIGN KEY. Since all raw queries
+     * in migrations are FK operations, this method safely skips them on SQLite while
+     * running them normally on MySQL.
+     *
+     * @param string $sql Raw SQL query.
+     *
+     * @return mixed Query result or TRUE if skipped.
+     */
+    protected function execute(string $sql)
+    {
+        if ($this->db->dbdriver === 'sqlite3') {
+            return TRUE;
+        }
+
+        return $this->db->query($sql);
+    }
 }

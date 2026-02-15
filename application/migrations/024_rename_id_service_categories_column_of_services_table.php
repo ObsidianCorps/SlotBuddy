@@ -19,7 +19,7 @@ class Migration_Rename_id_service_categories_column_of_services_table extends SB
     public function up(): void
     {
         if ($this->db->field_exists('id_service_categories', 'services')) {
-            $this->db->query(
+            $this->execute(
                 'ALTER TABLE `' . $this->db->dbprefix('services') . '` DROP FOREIGN KEY `services_service_categories`',
             );
 
@@ -33,7 +33,7 @@ class Migration_Rename_id_service_categories_column_of_services_table extends SB
 
             $this->dbforge->modify_column('services', $fields);
 
-            $this->db->query(
+            $this->execute(
                 '
                 ALTER TABLE `' .
                     $this->db->dbprefix('services') .
@@ -54,7 +54,7 @@ class Migration_Rename_id_service_categories_column_of_services_table extends SB
     public function down(): void
     {
         if ($this->db->field_exists('id_categories', 'services')) {
-            $this->db->query(
+            $this->execute(
                 'ALTER TABLE `' . $this->db->dbprefix('services') . '` DROP FOREIGN KEY `services_categories`',
             );
 
@@ -68,7 +68,7 @@ class Migration_Rename_id_service_categories_column_of_services_table extends SB
 
             $this->dbforge->modify_column('services', $fields);
 
-            $this->db->query(
+            $this->execute(
                 '
                 ALTER TABLE `' .
                     $this->db->dbprefix('services') .

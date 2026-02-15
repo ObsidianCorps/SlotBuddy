@@ -213,6 +213,20 @@ class SB_Model extends CI_Model
     }
 
     /**
+     * Get a SQL expression for full-name concatenation that works on both MySQL and SQLite.
+     *
+     * @return string
+     */
+    protected function full_name_expr(): string
+    {
+        if ($this->db->dbdriver === 'sqlite3') {
+            return "first_name || ' ' || last_name";
+        }
+
+        return 'CONCAT_WS(" ", first_name, last_name)';
+    }
+
+    /**
      * Escape the order by statements in order to avoid SQL injection issues
      *
      * @param string $order_by
