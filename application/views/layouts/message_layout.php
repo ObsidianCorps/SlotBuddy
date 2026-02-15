@@ -14,26 +14,23 @@
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
     <link rel="icon" sizes="192x192" href="<?= asset_url('assets/img/logo.png') ?>">
 
-    <link rel="stylesheet" type="text/css"
-          href="<?= asset_url('assets/css/themes/' . setting('theme', 'default') . '.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/layouts/booking_layout.css') ?>">
+    <?= vite_assets('src/message.js') ?>
 
     <?php component('company_color_style', ['company_color' => vars('company_color')]); ?>
 
     <?php slot('styles'); ?>
 </head>
-<body>
-<div id="main" class="container">
-    <div class="row wrapper">
-        <div id="message-frame" class="col-12 border my-auto frame-container">
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+<div id="main" class="max-w-3xl mx-auto px-4">
+    <div class="flex min-h-screen items-center justify-center">
+        <div id="message-frame" class="w-full border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 p-8 my-8 text-center shadow-sm">
 
             <?php slot('content'); ?>
 
             <div class="mt-2">
-                <small>
+                <small class="text-gray-500 dark:text-gray-400">
                     Powered by
-                    <a href="https://slotbuddy.org">SlotBuddy</a>
+                    <a href="https://slotbuddy.org" class="text-primary-600 hover:text-primary-700 dark:text-primary-400">SlotBuddy</a>
                 </small>
             </div>
 

@@ -10,9 +10,9 @@
 
 <?php end_section('styles'); ?>
 
-<label class="form-label"><?= lang('color') ?></label>
+<label class="sb-label"><?= lang('color') ?></label>
 
-<div <?= $attributes ?? '' ?> class="color-selection d-flex justify-content-between mb-4">
+<div <?= $attributes ?? '' ?> class="color-selection flex justify-between mb-4">
     <button type="button" class="color-selection-option selected" data-value="#7cbae8">
         <i class="fas fa-check"></i>
     </button>
