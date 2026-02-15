@@ -2,220 +2,227 @@
 
 <?php section('content'); ?>
 
-<div class="container-fluid backend-page" id="customers-page">
-    <div class="row" id="customers">
-        <div id="filter-customers" class="filter-records col col-12 col-md-5">
-            <form class="mb-4">
-                <div class="input-group mb-3">
-                    <input type="text" class="key form-control" aria-label="keyword">
-
-                    <button class="filter btn btn-outline-secondary" type="submit"
-                            data-tippy-content="<?= lang('filter') ?>">
-                        <i class="fas fa-search"></i>
-                    </button>
+<div class="backend-page" id="customers-page">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="customers">
+        <div id="filter-customers" class="filter-records lg:col-span-1">
+            <div class="sb-card">
+                <div class="p-4 border-b border-gray-200 dark:border-gray-800">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <?= lang('customers') ?>
+                    </h2>
                 </div>
-            </form>
+                <div class="p-4">
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="text" class="key sb-input rounded-r-none" aria-label="keyword">
 
-            <h4 class="text-black-50 mb-3 fw-light">
-                <?= lang('customers') ?>
-            </h4>
+                            <button class="filter sb-btn-secondary rounded-l-none border-l-0" type="submit"
+                                    data-tippy-content="<?= lang('filter') ?>">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
 
-            <?php slot('after_page_title'); ?>
+                    <?php slot('after_page_title'); ?>
+                </div>
 
-            <div class="results">
-                <!-- JS -->
+                <div class="results divide-y divide-gray-200 dark:divide-gray-700">
+                    <!-- JS -->
+                </div>
             </div>
         </div>
 
-        <div class="record-details col-12 col-md-7">
-            <div class="btn-toolbar mb-4">
-                <div id="add-edit-delete-group" class="btn-group">
-                    <?php if (
-                        can('add', PRIV_CUSTOMERS) &&
-                        (!setting('limit_customer_access') || vars('role_slug') === DB_SLUG_ADMIN)
-                    ): ?>
-                        <button id="add-customer" class="btn btn-primary">
-                            <i class="fas fa-plus-square me-2"></i>
-                            <?= lang('add') ?>
-                        </button>
-                    <?php endif; ?>
+        <div class="record-details lg:col-span-2">
+            <div class="sb-card p-6">
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <div id="add-edit-delete-group" class="inline-flex rounded-md shadow-sm">
+                        <?php if (
+                            can('add', PRIV_CUSTOMERS) &&
+                            (!setting('limit_customer_access') || vars('role_slug') === DB_SLUG_ADMIN)
+                        ): ?>
+                            <button id="add-customer" class="sb-btn-primary">
+                                <i class="fas fa-plus-square mr-2"></i>
+                                <?= lang('add') ?>
+                            </button>
+                        <?php endif; ?>
 
-                    <?php if (can('edit', PRIV_CUSTOMERS)): ?>
-                        <button id="edit-customer" class="btn btn-outline-secondary" disabled="disabled">
-                            <i class="fas fa-edit me-2"></i>
-                            <?= lang('edit') ?>
-                        </button>
-                    <?php endif; ?>
+                        <?php if (can('edit', PRIV_CUSTOMERS)): ?>
+                            <button id="edit-customer" class="sb-btn-secondary" disabled="disabled">
+                                <i class="fas fa-edit mr-2"></i>
+                                <?= lang('edit') ?>
+                            </button>
+                        <?php endif; ?>
 
-                    <?php if (can('delete', PRIV_CUSTOMERS)): ?>
-                        <button id="delete-customer" class="btn btn-outline-secondary" disabled="disabled">
-                            <i class="fas fa-trash-alt me-2"></i>
-                            <?= lang('delete') ?>
+                        <?php if (can('delete', PRIV_CUSTOMERS)): ?>
+                            <button id="delete-customer" class="sb-btn-secondary" disabled="disabled">
+                                <i class="fas fa-trash-alt mr-2"></i>
+                                <?= lang('delete') ?>
+                            </button>
+                        <?php endif; ?>
+                    </div>
+
+                    <div id="save-cancel-group" style="display:none;">
+                        <button id="save-customer" class="sb-btn-primary">
+                            <i class="fas fa-check-square mr-2"></i>
+                            <?= lang('save') ?>
                         </button>
-                    <?php endif; ?>
+                        <button id="cancel-customer" class="sb-btn-secondary">
+                            <?= lang('cancel') ?>
+                        </button>
+                    </div>
+
+                    <?php slot('after_page_actions'); ?>
                 </div>
 
-                <div id="save-cancel-group" style="display:none;">
-                    <button id="save-customer" class="btn btn-primary">
-                        <i class="fas fa-check-square me-2"></i>
-                        <?= lang('save') ?>
-                    </button>
-                    <button id="cancel-customer" class="btn btn-secondary">
-                        <?= lang('cancel') ?>
-                    </button>
-                </div>
+                <input id="customer-id" type="hidden">
 
-                <?php slot('after_page_actions'); ?>
-            </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('details') ?>
+                        </h4>
 
-            <input id="customer-id" type="hidden">
+                        <div id="form-message" class="alert" style="display:none;"></div>
 
-            <div class="row">
-                <div class="col-12 col-md-6" style="margin-left: 0;">
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('details') ?>
-                    </h4>
-
-                    <div id="form-message" class="alert" style="display:none;"></div>
-
-                    <div class="mb-3">
-                        <label for="first-name" class="form-label">
-                            <?= lang('first_name') ?>
-                            <?php if (vars('require_first_name')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="first-name"
-                               class="<?= vars('require_first_name') ? 'required' : '' ?> form-control" maxlength="100"
-                               disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="last-name" class="form-label">
-                            <?= lang('last_name') ?>
-                            <?php if (vars('require_last_name')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="last-name"
-                               class="<?= vars('require_last_name') ? 'required' : '' ?> form-control" maxlength="120"
-                               disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label">
-                            <?= lang('email') ?>
-                            <?php if (vars('require_email')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="email"
-                               class="<?= vars('require_email') ? 'required' : '' ?> form-control" maxlength="120"
-                               disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="phone-number" class="form-label">
-                            <?= lang('phone_number') ?>
-                            <?php if (vars('require_phone_number')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="phone-number" maxlength="60"
-                               class="<?= vars('require_phone_number') ? 'required' : '' ?> form-control" disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="address" class="form-label">
-                            <?= lang('address') ?>
-                            <?php if (vars('require_address')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="address"
-                               class="<?= vars('require_address') ? 'required' : '' ?> form-control"
-                               maxlength="120" disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="city" class="form-label">
-                            <?= lang('city') ?>
-                            <?php if (vars('require_city')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="city" class="<?= vars('require_city') ? 'required' : '' ?> form-control"
-                               maxlength="120" disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="zip-code" class="form-label">
-                            <?= lang('zip_code') ?>
-                            <?php if (vars('require_zip_code')): ?>
-                                <span class="text-danger" hidden>*</span>
-                            <?php endif; ?>
-                        </label>
-                        <input type="text" id="zip-code"
-                               class="<?= vars('require_zip_code') ? 'required' : '' ?> form-control"
-                               maxlength="120" disabled/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" for="language">
-                            <?= lang('language') ?>
-                            <span class="text-danger" hidden>*</span>
-                        </label>
-                        <select id="language" class="form-select required" disabled>
-                            <?php foreach (vars('available_languages') as $available_language): ?>
-                                <option value="<?= $available_language ?>">
-                                    <?= ucfirst($available_language) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" for="timezone">
-                            <?= lang('timezone') ?>
-                            <span class="text-danger" hidden>*</span>
-                        </label>
-                        <?php component('timezone_dropdown', [
-                            'attributes' => 'id="timezone" class="form-control required" disabled',
-                            'grouped_timezones' => vars('grouped_timezones'),
-                        ]); ?>
-                    </div>
-
-                    <?php if (setting('ldap_is_active')): ?>
                         <div class="mb-3">
-                            <label for="ldap-dn" class="form-label">
-                                <?= lang('ldap_dn') ?>
+                            <label for="first-name" class="sb-label">
+                                <?= lang('first_name') ?>
+                                <?php if (vars('require_first_name')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
                             </label>
-                            <input type="text" id="ldap-dn" class="form-control" maxlength="100" disabled/>
+                            <input type="text" id="first-name"
+                                   class="<?= vars('require_first_name') ? 'required' : '' ?> sb-input" maxlength="100"
+                                   disabled/>
                         </div>
-                    <?php endif; ?>
 
-                    <?php component('custom_fields', [
-                        'disabled' => true,
-                    ]); ?>
+                        <div class="mb-3">
+                            <label for="last-name" class="sb-label">
+                                <?= lang('last_name') ?>
+                                <?php if (vars('require_last_name')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="last-name"
+                                   class="<?= vars('require_last_name') ? 'required' : '' ?> sb-input" maxlength="120"
+                                   disabled/>
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="notes">
-                            <?= lang('notes') ?>
-                        </label>
-                        <textarea id="notes" rows="4" class="form-control" disabled></textarea>
+                        <div class="mb-3">
+                            <label for="email" class="sb-label">
+                                <?= lang('email') ?>
+                                <?php if (vars('require_email')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="email"
+                                   class="<?= vars('require_email') ? 'required' : '' ?> sb-input" maxlength="120"
+                                   disabled/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone-number" class="sb-label">
+                                <?= lang('phone_number') ?>
+                                <?php if (vars('require_phone_number')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="phone-number" maxlength="60"
+                                   class="<?= vars('require_phone_number') ? 'required' : '' ?> sb-input" disabled/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="sb-label">
+                                <?= lang('address') ?>
+                                <?php if (vars('require_address')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="address"
+                                   class="<?= vars('require_address') ? 'required' : '' ?> sb-input"
+                                   maxlength="120" disabled/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="city" class="sb-label">
+                                <?= lang('city') ?>
+                                <?php if (vars('require_city')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="city" class="<?= vars('require_city') ? 'required' : '' ?> sb-input"
+                                   maxlength="120" disabled/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="zip-code" class="sb-label">
+                                <?= lang('zip_code') ?>
+                                <?php if (vars('require_zip_code')): ?>
+                                    <span class="text-red-500" hidden>*</span>
+                                <?php endif; ?>
+                            </label>
+                            <input type="text" id="zip-code"
+                                   class="<?= vars('require_zip_code') ? 'required' : '' ?> sb-input"
+                                   maxlength="120" disabled/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="sb-label" for="language">
+                                <?= lang('language') ?>
+                                <span class="text-red-500" hidden>*</span>
+                            </label>
+                            <select id="language" class="sb-input required" disabled>
+                                <?php foreach (vars('available_languages') as $available_language): ?>
+                                    <option value="<?= $available_language ?>">
+                                        <?= ucfirst($available_language) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="sb-label" for="timezone">
+                                <?= lang('timezone') ?>
+                                <span class="text-red-500" hidden>*</span>
+                            </label>
+                            <?php component('timezone_dropdown', [
+                                'attributes' => 'id="timezone" class="sb-input required" disabled',
+                                'grouped_timezones' => vars('grouped_timezones'),
+                            ]); ?>
+                        </div>
+
+                        <?php if (setting('ldap_is_active')): ?>
+                            <div class="mb-3">
+                                <label for="ldap-dn" class="sb-label">
+                                    <?= lang('ldap_dn') ?>
+                                </label>
+                                <input type="text" id="ldap-dn" class="sb-input" maxlength="100" disabled/>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php component('custom_fields', [
+                            'disabled' => true,
+                        ]); ?>
+
+                        <div class="mb-3">
+                            <label class="sb-label" for="notes">
+                                <?= lang('notes') ?>
+                            </label>
+                            <textarea id="notes" rows="4" class="sb-input" disabled></textarea>
+                        </div>
+
+                        <?php slot('after_primary_fields'); ?>
                     </div>
 
-                    <?php slot('after_primary_fields'); ?>
-                </div>
+                    <div>
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('appointments') ?>
+                        </h4>
 
-                <div class="col-12 col-md-6">
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('appointments') ?>
-                    </h4>
+                        <div id="customer-appointments" class="sb-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700"></div>
 
-                    <div id="customer-appointments" class="card bg-white border"></div>
-
-                    <?php slot('after_secondary_fields'); ?>
+                        <?php slot('after_secondary_fields'); ?>
+                    </div>
                 </div>
             </div>
         </div>

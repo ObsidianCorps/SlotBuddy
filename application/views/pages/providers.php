@@ -2,375 +2,382 @@
 
 <?php section('content'); ?>
 
-<div class="container-fluid backend-page" id="providers-page">
-    <div class="row" id="providers">
-        <div id="filter-providers" class="filter-records column col-12 col-md-5">
-            <form class="mb-4">
-                <div class="input-group">
-                    <input type="text" class="key form-control" aria-label="keyword">
-
-                    <button class="filter btn btn-outline-secondary" type="submit"
-                            data-tippy-content="<?= lang('filter') ?>">
-                        <i class="fas fa-search"></i>
-                    </button>
+<div class="backend-page" id="providers-page">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="providers">
+        <div id="filter-providers" class="filter-records lg:col-span-1">
+            <div class="sb-card">
+                <div class="p-4 border-b border-gray-200 dark:border-gray-800">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <?= lang('providers') ?>
+                    </h2>
                 </div>
-            </form>
+                <div class="p-4">
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="text" class="key sb-input rounded-r-none" aria-label="keyword">
 
-            <h4 class="text-black-50 mb-3 fw-light">
-                <?= lang('providers') ?>
-            </h4>
+                            <button class="filter sb-btn-secondary rounded-l-none border-l-0" type="submit"
+                                    data-tippy-content="<?= lang('filter') ?>">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
 
-            <?php slot('after_page_title'); ?>
+                    <?php slot('after_page_title'); ?>
+                </div>
 
-            <div class="results">
-                <!-- JS -->
+                <div class="results divide-y divide-gray-200 dark:divide-gray-700">
+                    <!-- JS -->
+                </div>
             </div>
         </div>
 
-        <div class="record-details column col-12 col-md-7">
-            <div class="float-md-start mb-4 me-4">
-                <div class="add-edit-delete-group btn-group">
-                    <button id="add-provider" class="btn btn-primary">
-                        <i class="fas fa-plus-square me-2"></i>
-                        <?= lang('add') ?>
-                    </button>
-                    <button id="edit-provider" class="btn btn-outline-secondary" disabled="disabled">
-                        <i class="fas fa-edit me-2"></i>
-                        <?= lang('edit') ?>
-                    </button>
-                    <button id="delete-provider" class="btn btn-outline-secondary" disabled="disabled">
-                        <i class="fas fa-trash-alt me-2"></i>
-                        <?= lang('delete') ?>
-                    </button>
+        <div class="record-details lg:col-span-2">
+            <div class="sb-card p-6">
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <div class="add-edit-delete-group inline-flex rounded-md shadow-sm">
+                        <button id="add-provider" class="sb-btn-primary">
+                            <i class="fas fa-plus-square mr-2"></i>
+                            <?= lang('add') ?>
+                        </button>
+                        <button id="edit-provider" class="sb-btn-secondary" disabled="disabled">
+                            <i class="fas fa-edit mr-2"></i>
+                            <?= lang('edit') ?>
+                        </button>
+                        <button id="delete-provider" class="sb-btn-secondary" disabled="disabled">
+                            <i class="fas fa-trash-alt mr-2"></i>
+                            <?= lang('delete') ?>
+                        </button>
+                    </div>
+
+                    <div class="save-cancel-group" style="display:none;">
+                        <button id="save-provider" class="sb-btn-primary">
+                            <i class="fas fa-check-square mr-2"></i>
+                            <?= lang('save') ?>
+                        </button>
+                        <button id="cancel-provider" class="sb-btn-secondary">
+                            <?= lang('cancel') ?>
+                        </button>
+                    </div>
+
+                    <?php slot('after_page_actions'); ?>
                 </div>
 
-                <div class="save-cancel-group" style="display:none;">
-                    <button id="save-provider" class="btn btn-primary">
-                        <i class="fas fa-check-square me-2"></i>
-                        <?= lang('save') ?>
-                    </button>
-                    <button id="cancel-provider" class="btn btn-secondary">
-                        <?= lang('cancel') ?>
-                    </button>
-                </div>
+                <ul class="nav nav-pills switch-view flex border-b border-gray-200 dark:border-gray-700 mb-4">
+                    <li class="nav-item">
+                        <a class="nav-link active inline-block px-4 py-2 text-sm font-medium rounded-t-lg" href="#details" data-bs-toggle="tab">
+                            <?= lang('details') ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link inline-block px-4 py-2 text-sm font-medium rounded-t-lg" href="#working-plan" data-bs-toggle="tab">
+                            <?= lang('working_plan') ?>
+                        </a>
+                    </li>
+                </ul>
 
-                <?php slot('after_page_actions'); ?>
-            </div>
-
-            <ul class="nav nav-pills switch-view">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#details" data-bs-toggle="tab">
-                        <?= lang('details') ?>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#working-plan" data-bs-toggle="tab">
-                        <?= lang('working_plan') ?>
-                    </a>
-                </li>
-            </ul>
-
-            <?php
+                <?php
 // This form message is outside the details view, so that it can be
 // visible when the user has working plan view active.
 ?>
 
-            <div class="form-message alert" style="display:none;"></div>
+                <div class="form-message alert" style="display:none;"></div>
 
-            <div class="tab-content">
-                <div class="details-view tab-pane fade show active clearfix" id="details">
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('details') ?>
-                    </h4>
+                <div class="tab-content">
+                    <div class="details-view tab-pane fade show active clearfix" id="details">
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('details') ?>
+                        </h4>
 
-                    <input type="hidden" id="id" class="record-id">
+                        <input type="hidden" id="id" class="record-id">
 
-                    <div class="row">
-                        <div class="details col-12 col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label" for="first-name">
-                                    <?= lang('first_name') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input id="first-name" class="form-control required" maxlength="256" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="last-name">
-                                    <?= lang('last_name') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input id="last-name" class="form-control required" maxlength="512" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="email">
-                                    <?= lang('email') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input id="email" class="form-control required" max="512" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="phone-number">
-                                    <?= lang('phone_number') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input id="phone-number" class="form-control required" max="128" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="mobile-number">
-                                    <?= lang('mobile_number') ?>
-
-                                </label>
-                                <input id="mobile-number" class="form-control" maxlength="128" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="address">
-                                    <?= lang('address') ?>
-                                </label>
-                                <input id="address" class="form-control" maxlength="256" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="city">
-                                    <?= lang('city') ?>
-
-                                </label>
-                                <input id="city" class="form-control" maxlength="256" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="state">
-                                    <?= lang('state') ?>
-                                </label>
-                                <input id="state" class="form-control" maxlength="256" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="zip-code">
-                                    <?= lang('zip_code') ?>
-
-                                </label>
-                                <input id="zip-code" class="form-control" maxlength="64" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="notes">
-                                    <?= lang('notes') ?>
-                                </label>
-                                <textarea id="notes" class="form-control" rows="3" disabled></textarea>
-                            </div>
-
-                            <?php slot('after_primary_fields'); ?>
-                        </div>
-                        <div class="settings col-12 col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label" for="username">
-                                    <?= lang('username') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input id="username" class="form-control required" maxlength="256" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="password">
-                                    <?= lang('password') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input type="password" id="password" class="form-control required"
-                                       maxlength="512" autocomplete="new-password" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="password-confirm">
-                                    <?= lang('retype_password') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <input type="password" id="password-confirm"
-                                       class="form-control required" maxlength="512"
-                                       autocomplete="new-password" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="calendar-view">
-                                    <?= lang('calendar') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <select id="calendar-view" class="form-select required" disabled>
-                                    <option value="default"><?= lang('default') ?></option>
-                                    <option value="table"><?= lang('table') ?></option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="language">
-                                    <?= lang('language') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <select id="language" class="form-select required" disabled>
-                                    <?php foreach (vars('available_languages') as $available_language): ?>
-                                        <option value="<?= $available_language ?>">
-                                            <?= ucfirst($available_language) ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="timezone">
-                                    <?= lang('timezone') ?>
-                                    <span class="text-danger" hidden>*</span>
-                                </label>
-                                <?php component('timezone_dropdown', [
-                                    'attributes' => 'id="timezone" class="form-control required" disabled',
-                                    'grouped_timezones' => vars('grouped_timezones'),
-                                ]); ?>
-                            </div>
-
-                            <?php if (setting('ldap_is_active')): ?>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="details">
                                 <div class="mb-3">
-                                    <label for="ldap-dn" class="form-label">
-                                        <?= lang('ldap_dn') ?>
+                                    <label class="sb-label" for="first-name">
+                                        <?= lang('first_name') ?>
+                                        <span class="text-red-500" hidden>*</span>
                                     </label>
-                                    <input type="text" id="ldap-dn" class="form-control" maxlength="100" disabled/>
+                                    <input id="first-name" class="sb-input required" maxlength="256" disabled>
                                 </div>
-                            <?php endif; ?>
 
-                            <div>
-                                <label class="form-label mb-3">
-                                    <?= lang('options') ?>
-                                </label>
+                                <div class="mb-3">
+                                    <label class="sb-label" for="last-name">
+                                        <?= lang('last_name') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input id="last-name" class="sb-input required" maxlength="512" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="email">
+                                        <?= lang('email') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input id="email" class="sb-input required" max="512" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="phone-number">
+                                        <?= lang('phone_number') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input id="phone-number" class="sb-input required" max="128" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="mobile-number">
+                                        <?= lang('mobile_number') ?>
+
+                                    </label>
+                                    <input id="mobile-number" class="sb-input" maxlength="128" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="address">
+                                        <?= lang('address') ?>
+                                    </label>
+                                    <input id="address" class="sb-input" maxlength="256" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="city">
+                                        <?= lang('city') ?>
+
+                                    </label>
+                                    <input id="city" class="sb-input" maxlength="256" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="state">
+                                        <?= lang('state') ?>
+                                    </label>
+                                    <input id="state" class="sb-input" maxlength="256" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="zip-code">
+                                        <?= lang('zip_code') ?>
+
+                                    </label>
+                                    <input id="zip-code" class="sb-input" maxlength="64" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="notes">
+                                        <?= lang('notes') ?>
+                                    </label>
+                                    <textarea id="notes" class="sb-input" rows="3" disabled></textarea>
+                                </div>
+
+                                <?php slot('after_primary_fields'); ?>
                             </div>
+                            <div class="settings">
+                                <div class="mb-3">
+                                    <label class="sb-label" for="username">
+                                        <?= lang('username') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input id="username" class="sb-input required" maxlength="256" disabled>
+                                </div>
 
-                            <div class="border rounded mb-3 p-3">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="is-private">
-                                    <label class="form-check-label" for="is-private">
-                                        <?= lang('hide_from_public') ?>
+                                <div class="mb-3">
+                                    <label class="sb-label" for="password">
+                                        <?= lang('password') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input type="password" id="password" class="sb-input required"
+                                           maxlength="512" autocomplete="new-password" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="password-confirm">
+                                        <?= lang('retype_password') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <input type="password" id="password-confirm"
+                                           class="sb-input required" maxlength="512"
+                                           autocomplete="new-password" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="calendar-view">
+                                        <?= lang('calendar') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <select id="calendar-view" class="sb-input required" disabled>
+                                        <option value="default"><?= lang('default') ?></option>
+                                        <option value="table"><?= lang('table') ?></option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="language">
+                                        <?= lang('language') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <select id="language" class="sb-input required" disabled>
+                                        <?php foreach (vars('available_languages') as $available_language): ?>
+                                            <option value="<?= $available_language ?>">
+                                                <?= ucfirst($available_language) ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="sb-label" for="timezone">
+                                        <?= lang('timezone') ?>
+                                        <span class="text-red-500" hidden>*</span>
+                                    </label>
+                                    <?php component('timezone_dropdown', [
+                                        'attributes' => 'id="timezone" class="sb-input required" disabled',
+                                        'grouped_timezones' => vars('grouped_timezones'),
+                                    ]); ?>
+                                </div>
+
+                                <?php if (setting('ldap_is_active')): ?>
+                                    <div class="mb-3">
+                                        <label for="ldap-dn" class="sb-label">
+                                            <?= lang('ldap_dn') ?>
+                                        </label>
+                                        <input type="text" id="ldap-dn" class="sb-input" maxlength="100" disabled/>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div>
+                                    <label class="sb-label mb-3">
+                                        <?= lang('options') ?>
                                     </label>
                                 </div>
 
-                                <div class="form-text text-muted mb-3">
-                                    <small>
-                                        <?= lang('private_hint') ?>
-                                    </small>
+                                <div class="border border-gray-200 dark:border-gray-700 rounded-lg mb-3 p-3">
+                                    <div class="flex items-center gap-2">
+                                        <input class="form-check-input" type="checkbox" id="is-private">
+                                        <label class="text-sm text-gray-700 dark:text-gray-300" for="is-private">
+                                            <?= lang('hide_from_public') ?>
+                                        </label>
+                                    </div>
+
+                                    <div class="text-gray-500 dark:text-gray-400 mt-1 mb-3">
+                                        <small>
+                                            <?= lang('private_hint') ?>
+                                        </small>
+                                    </div>
+
+                                    <div class="flex items-center gap-2">
+                                        <input class="form-check-input" type="checkbox" id="notifications" disabled>
+                                        <label class="text-sm text-gray-700 dark:text-gray-300" for="notifications">
+                                            <?= lang('receive_notifications') ?>
+                                        </label>
+                                    </div>
                                 </div>
 
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="notifications" disabled>
-                                    <label class="form-check-label" for="notifications">
-                                        <?= lang('receive_notifications') ?>
+                                <div>
+                                    <label class="sb-label mb-3">
+                                        <?= lang('services') ?>
                                     </label>
                                 </div>
-                            </div>
 
-                            <div>
-                                <label class="form-label mb-3">
-                                    <?= lang('services') ?>
-                                </label>
-                            </div>
+                                <div id="provider-services" class="sb-card p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+                                    <!-- JS -->
+                                </div>
 
-                            <div id="provider-services" class="card card-body bg-white border">
-                                <!-- JS -->
+                                <?php slot('after_secondary_fields'); ?>
                             </div>
-
-                            <?php slot('after_secondary_fields'); ?>
                         </div>
                     </div>
-                </div>
 
-                <div class="working-plan-view tab-pane fade clearfix" id="working-plan">
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('working_plan') ?>
-                    </h4>
+                    <div class="working-plan-view tab-pane fade clearfix" id="working-plan">
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('working_plan') ?>
+                        </h4>
 
-                    <button id="reset-working-plan" class="btn btn-primary"
-                            data-tippy-content="<?= lang('reset_working_plan') ?>">
-                        <i class="fas fa-undo-alt me-2"></i>
-                        <?= lang('reset_plan') ?></button>
-                    <table class="working-plan table table-striped mt-2">
-                        <thead>
-                        <tr>
-                            <th><?= lang('day') ?></th>
-                            <th><?= lang('start') ?></th>
-                            <th><?= lang('end') ?></th>
-                        </tr>
-                        </thead>
-                        <tbody><!-- Dynamic Content --></tbody>
-                    </table>
+                        <button id="reset-working-plan" class="sb-btn-primary"
+                                data-tippy-content="<?= lang('reset_working_plan') ?>">
+                            <i class="fas fa-undo-alt mr-2"></i>
+                            <?= lang('reset_plan') ?></button>
+                        <table class="working-plan w-full text-sm mt-2">
+                            <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('day') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('start') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('end') ?></th>
+                            </tr>
+                            </thead>
+                            <tbody><!-- Dynamic Content --></tbody>
+                        </table>
 
-                    <?php slot('after_working_plan'); ?>
+                        <?php slot('after_working_plan'); ?>
 
-                    <br>
+                        <br>
 
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('breaks') ?>
-                    </h4>
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('breaks') ?>
+                        </h4>
 
-                    <p>
-                        <?= lang('add_breaks_during_each_day') ?>
-                    </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <?= lang('add_breaks_during_each_day') ?>
+                        </p>
 
-                    <div>
-                        <button type="button" class="add-break btn btn-primary">
-                            <i class="fas fa-plus-square me-2"></i>
-                            <?= lang('add_break') ?>
-                        </button>
+                        <div>
+                            <button type="button" class="add-break sb-btn-primary">
+                                <i class="fas fa-plus-square mr-2"></i>
+                                <?= lang('add_break') ?>
+                            </button>
+                        </div>
+
+                        <br>
+
+                        <table class="breaks w-full text-sm">
+                            <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('day') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('start') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('end') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('actions') ?></th>
+                            </tr>
+                            </thead>
+                            <tbody><!-- Dynamic Content --></tbody>
+                        </table>
+
+                        <?php slot('after_breaks'); ?>
+
+                        <br>
+
+                        <h4 class="text-gray-500 dark:text-gray-400 mb-3 font-light">
+                            <?= lang('working_plan_exceptions') ?>
+                        </h4>
+
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <?= lang('add_working_plan_exceptions_during_each_day') ?>
+                        </p>
+
+                        <div>
+                            <button type="button" class="add-working-plan-exception sb-btn-primary mr-2">
+                                <i class="fas fa-plus-square mr-2"></i>
+                                <?= lang('add_working_plan_exception') ?>
+                            </button>
+                        </div>
+
+                        <br>
+
+                        <table class="working-plan-exceptions w-full text-sm">
+                            <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('day') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('start') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('end') ?></th>
+                                <th class="text-left py-2 px-3 text-gray-700 dark:text-gray-300"><?= lang('actions') ?></th>
+                            </tr>
+                            </thead>
+                            <tbody><!-- Dynamic Content --></tbody>
+                        </table>
+
+                        <?php component('working_plan_exceptions_modal'); ?>
+
+                        <?php slot('after_working_plan_exceptions'); ?>
                     </div>
-
-                    <br>
-
-                    <table class="breaks table table-striped">
-                        <thead>
-                        <tr>
-                            <th><?= lang('day') ?></th>
-                            <th><?= lang('start') ?></th>
-                            <th><?= lang('end') ?></th>
-                            <th><?= lang('actions') ?></th>
-                        </tr>
-                        </thead>
-                        <tbody><!-- Dynamic Content --></tbody>
-                    </table>
-
-                    <?php slot('after_breaks'); ?>
-
-                    <br>
-
-                    <h4 class="text-black-50 mb-3 fw-light">
-                        <?= lang('working_plan_exceptions') ?>
-                    </h4>
-
-                    <p>
-                        <?= lang('add_working_plan_exceptions_during_each_day') ?>
-                    </p>
-
-                    <div>
-                        <button type="button" class="add-working-plan-exception btn btn-primary me-2">
-                            <i class="fas fa-plus-square me-2"></i>
-                            <?= lang('add_working_plan_exception') ?>
-                        </button>
-                    </div>
-
-                    <br>
-
-                    <table class="working-plan-exceptions table table-striped">
-                        <thead>
-                        <tr>
-                            <th><?= lang('day') ?></th>
-                            <th><?= lang('start') ?></th>
-                            <th><?= lang('end') ?></th>
-                            <th><?= lang('actions') ?></th>
-                        </tr>
-                        </thead>
-                        <tbody><!-- Dynamic Content --></tbody>
-                    </table>
-
-                    <?php component('working_plan_exceptions_modal'); ?>
-
-                    <?php slot('after_working_plan_exceptions'); ?>
                 </div>
             </div>
         </div>
