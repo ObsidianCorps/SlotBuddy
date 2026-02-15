@@ -7,62 +7,63 @@
  */
 ?>
 
-<div id="unavailabilities-modal" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title"><?= lang('new_unavailability_title') ?></h3>
-                <button class="btn-close" data-bs-dismiss="modal"></button>
+<div id="unavailabilities-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div class="flex min-h-full items-center justify-center p-4">
+        <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" data-dismiss="modal"></div>
+        <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white"><?= lang('new_unavailability_title') ?></h3>
+                <button type="button" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-xl" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div class="modal-message alert d-none"></div>
+            <div class="p-4">
+                <div class="modal-message hidden rounded-lg p-3 mb-3 text-sm"></div>
 
                 <form>
                     <fieldset>
                         <input id="unavailability-id" type="hidden">
 
                         <div class="mb-3">
-                            <label for="unavailability-provider" class="form-label">
+                            <label for="unavailability-provider" class="sb-label">
                                 <?= lang('provider') ?>
                             </label>
-                            <select id="unavailability-provider" class="form-select"></select>
+                            <select id="unavailability-provider" class="sb-input"></select>
                         </div>
 
                         <?php slot('after_select_appointment_provider'); ?>
 
                         <div class="mb-3">
-                            <label for="unavailability-start" class="form-label">
+                            <label for="unavailability-start" class="sb-label">
                                 <?= lang('start') ?>
-                                <span class="text-danger">*</span>
+                                <span class="text-red-500">*</span>
                             </label>
-                            <input id="unavailability-start" class="form-control">
+                            <input id="unavailability-start" class="sb-input">
                         </div>
 
                         <div class="mb-3">
-                            <label for="unavailability-end" class="form-label">
+                            <label for="unavailability-end" class="sb-label">
                                 <?= lang('end') ?>
-                                <span class="text-danger">*</span>
+                                <span class="text-red-500">*</span>
                             </label>
-                            <input id="unavailability-end" class="form-control">
+                            <input id="unavailability-end" class="sb-input">
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">
+                            <label class="sb-label">
                                 <?= lang('timezone') ?>
                             </label>
 
                             <div
-                                class="border rounded d-flex justify-content-between align-items-center bg-light timezone-info">
-                                <div class="border-end w-50 p-1 text-center">
-                                    <small>
+                                class="border border-gray-200 dark:border-gray-600 rounded-lg flex justify-between items-center bg-gray-50 dark:bg-gray-700 timezone-info">
+                                <div class="border-r border-gray-200 dark:border-gray-600 w-1/2 p-1 text-center">
+                                    <small class="text-gray-600 dark:text-gray-300">
                                         <?= lang('provider') ?>:
                                         <span class="provider-timezone">
                                             -
                                         </span>
                                     </small>
                                 </div>
-                                <div class="w-50 p-1 text-center">
-                                    <small>
+                                <div class="w-1/2 p-1 text-center">
+                                    <small class="text-gray-600 dark:text-gray-300">
                                         <?= lang('current_user') ?>:
                                         <span>
                                             <?= $timezones[session('timezone', 'UTC')] ?>
@@ -73,24 +74,24 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="unavailability-notes" class="form-label">
+                            <label for="unavailability-notes" class="sb-label">
                                 <?= lang('notes') ?>
                             </label>
-                            <textarea id="unavailability-notes" rows="3" class="form-control"></textarea>
+                            <textarea id="unavailability-notes" rows="3" class="sb-input"></textarea>
                         </div>
 
                         <?php slot('after_primary_unavailability_fields'); ?>
                     </fieldset>
                 </form>
             </div>
-            <div class="modal-footer">
+            <div class="flex justify-end gap-3 p-4 border-t border-gray-200 dark:border-gray-700">
                 <?php slot('after_unavailability_actions'); ?>
 
-                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                <button class="sb-btn-secondary" data-dismiss="modal">
                     <?= lang('cancel') ?>
                 </button>
-                <button id="save-unavailability" class="btn btn-primary">
-                    <i class="fas fa-check-square me-2"></i>
+                <button id="save-unavailability" class="sb-btn-primary">
+                    <i class="fas fa-check-square mr-2"></i>
                     <?= lang('save') ?>
                 </button>
             </div>
@@ -102,4 +103,4 @@
 
 <script src="<?= asset_url('assets/js/components/unavailabilities_modal.js') ?>"></script>
 
-<?php end_section('scripts'); ?> 
+<?php end_section('scripts'); ?>
