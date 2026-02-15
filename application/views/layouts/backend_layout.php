@@ -40,6 +40,21 @@
 
     <?php component('js_vars_script'); ?>
     <?php component('js_lang_script'); ?>
+
+    <!-- Legacy vendor libraries (loaded as regular scripts for backward compat with old page JS) -->
+    <script src="<?= asset_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= asset_url('assets/vendor/moment/moment.min.js') ?>"></script>
+    <script src="<?= asset_url('assets/vendor/moment-timezone/moment-timezone-with-data.min.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/app.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/date.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/file.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/http.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/lang.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/message.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/string.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/url.js') ?>"></script>
+    <script src="<?= asset_url('assets/js/utils/validation.js') ?>"></script>
+
     <?php slot('scripts'); ?>
 </body>
 </html>
