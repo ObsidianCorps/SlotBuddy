@@ -2,12 +2,12 @@
 
 <?php section('content'); ?>
 
-<div class="container-fluid backend-page" id="calendar-page">
-    <div class="row" id="calendar-toolbar">
-        <div id="calendar-filter" class="col-md-3">
+<div class="space-y-4" id="calendar-page">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-4" id="calendar-toolbar">
+        <div id="calendar-filter" class="w-full md:w-64">
             <div class="calendar-filter-items">
                 <select id="select-filter-item"
-                        class="form-select col"
+                        class="sb-input"
                         data-tippy-content="<?= lang('select_filter_item_hint') ?>"
                         aria-label="Filter">
                     <!-- JS -->
@@ -15,32 +15,33 @@
             </div>
         </div>
 
-        <div id="calendar-actions" class="col-md-9">
+        <div id="calendar-actions" class="flex flex-wrap items-center gap-2 md:ml-auto">
             <?php if (vars('calendar_view') === CALENDAR_VIEW_DEFAULT): ?>
                 <button
                     id="enable-sync"
-                    class="btn btn-light"
+                    class="sb-btn-ghost"
                     data-tippy-content="<?= lang('enable_appointment_sync_hint') ?>"
                     hidden>
-                    <i class="fas fa-rotate me-2"></i>
+                    <i class="fas fa-rotate mr-2"></i>
                     <?= lang('enable_sync') ?>
                 </button>
 
-                <div class="btn-group" id="sync-button-group" hidden>
-                    <button type="button" class="btn btn-light" id="trigger-sync"
+                <div class="relative inline-flex" id="sync-button-group" hidden>
+                    <button type="button" class="sb-btn-ghost rounded-r-none border-r border-gray-200 dark:border-gray-700" id="trigger-sync"
                             data-tippy-content="<?= lang('trigger_sync_hint') ?>">
-                        <i class="fas fa-rotate me-2"></i>
+                        <i class="fas fa-rotate mr-2"></i>
                         <?= lang('synchronize') ?>
                     </button>
-                    <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split"
+                    <button type="button" class="sb-btn-ghost rounded-l-none px-2"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually-hidden">
+                        <span class="sr-only">
                             Toggle Dropdown
                         </span>
+                        <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
+                    <ul class="hidden absolute right-0 top-full mt-1 z-50 min-w-[10rem] rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-1 shadow-lg">
                         <li>
-                            <a class="dropdown-item" href="#" id="disable-sync">
+                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#" id="disable-sync">
                                 <?= lang('disable_sync') ?>
                             </a>
                         </li>
@@ -49,23 +50,23 @@
             <?php endif; ?>
 
             <?php if (can('add', PRIV_APPOINTMENTS)): ?>
-                <div class="dropdown d-sm-inline-block">
-                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown">
+                <div class="relative inline-block">
+                    <button class="sb-btn-ghost" type="button" data-bs-toggle="dropdown">
                         <i class="fas fa-plus-square"></i>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="hidden absolute left-0 top-full mt-1 z-50 min-w-[10rem] rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-1 shadow-lg">
                         <li>
-                            <a class="dropdown-item" href="#" id="insert-appointment">
+                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#" id="insert-appointment">
                                 <?= lang('appointment') ?>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#" id="insert-unavailability">
+                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#" id="insert-unavailability">
                                 <?= lang('unavailability') ?>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#"
                                id="insert-working-plan-exception" <?= session('role_slug') !== DB_SLUG_ADMIN
                                    ? 'hidden'
                                    : '' ?>>
@@ -76,20 +77,20 @@
                 </div>
             <?php endif; ?>
 
-            <button id="reload-appointments" class="btn btn-light"
+            <button id="reload-appointments" class="sb-btn-ghost"
                     data-tippy-content="<?= lang('reload_appointments_hint') ?>">
                 <i class="fas fa-sync-alt"></i>
             </button>
 
             <?php if (vars('calendar_view') === CALENDAR_VIEW_DEFAULT): ?>
-                <a class="btn btn-light mb-0" href="<?= site_url('calendar?view=table') ?>"
+                <a class="sb-btn-ghost" href="<?= site_url('calendar?view=table') ?>"
                    data-tippy-content="<?= lang('table') ?>">
                     <i class="fas fa-table"></i>
                 </a>
             <?php endif; ?>
 
             <?php if (vars('calendar_view') === CALENDAR_VIEW_TABLE): ?>
-                <a class="btn btn-light mb-0" href="<?= site_url('calendar?view=default') ?>"
+                <a class="sb-btn-ghost" href="<?= site_url('calendar?view=default') ?>"
                    data-tippy-content="<?= lang('default') ?>">
                     <i class="fas fa-calendar-alt"></i>
                 </a>
@@ -148,4 +149,3 @@
 <script src="<?= asset_url('assets/js/pages/calendar.js') ?>"></script>
 
 <?php end_section('scripts'); ?>
-
