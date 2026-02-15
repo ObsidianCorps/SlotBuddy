@@ -38,7 +38,7 @@ class Migration_Add_color_column_to_services_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('color', 'services')) {
-            $this->dbforge->drop_column('services', 'color');
+            $this->drop_column('services', 'color');
         }
     }
 }

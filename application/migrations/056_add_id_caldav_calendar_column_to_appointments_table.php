@@ -37,7 +37,7 @@ class Migration_Add_id_caldav_calendar_column_to_appointments_table extends SB_M
     public function down(): void
     {
         if ($this->db->field_exists('id_caldav_calendar', 'appointments')) {
-            $this->dbforge->drop_column('appointments', 'id_caldav_calendar');
+            $this->drop_column('appointments', 'id_caldav_calendar');
         }
     }
 }

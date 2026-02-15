@@ -38,7 +38,7 @@ class Migration_Add_is_private_column_to_services_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('is_private', 'services')) {
-            $this->dbforge->drop_column('services', 'is_private');
+            $this->drop_column('services', 'is_private');
         }
     }
 }

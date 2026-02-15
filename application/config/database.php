@@ -52,10 +52,10 @@ $query_builder = TRUE;
 $db_driver = defined('Config::DB_DRIVER') ? Config::DB_DRIVER : 'mysqli';
 
 if ($db_driver === 'sqlite3') {
-    $db['default']['hostname'] = APPPATH . '../storage/database.sqlite';
+    $db['default']['hostname'] = '';
     $db['default']['username'] = '';
     $db['default']['password'] = '';
-    $db['default']['database'] = '';
+    $db['default']['database'] = APPPATH . '../storage/database.sqlite';
     $db['default']['dbdriver'] = 'sqlite3';
     $db['default']['dbprefix'] = 'ea_';
     $db['default']['pconnect'] = FALSE;

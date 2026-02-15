@@ -6,13 +6,11 @@
     <title>Installation | SlotBuddy</title>
 
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/themes/default.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/pages/installation.css') ?>">
+    <?= vite_assets('src/message.js') ?>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
-<div id="loading" class="hidden">
-    <img src="<?= base_url('assets/img/loading.gif') ?>" alt="loading">
+<div id="loading" class="d-none fixed inset-0 z-50 flex items-center justify-center bg-black/20">
+    <div class="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-accent"></div>
 </div>
 
 <header class="bg-white dark:bg-gray-800 shadow-sm mb-6">
@@ -39,7 +37,7 @@
         </p>
     </div>
 
-    <div class="alert hidden rounded-lg p-3 mb-3 text-sm" hidden></div>
+    <div class="alert rounded-lg p-3 mb-3 text-sm" hidden></div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div class="admin-settings">
@@ -188,7 +186,6 @@
     <br>
 
     <button type="button" id="install" class="sb-btn-primary">
-        <i class="icon-white icon-ok mr-2"></i>
         Install SlotBuddy
     </button>
 </div>
@@ -201,9 +198,6 @@
 <?php component('js_lang_script'); ?>
 
 <script src="<?= asset_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
-<script src="<?= asset_url('assets/vendor/@popperjs-core/popper.min.js') ?>"></script>
-<script src="<?= asset_url('assets/vendor/bootstrap/bootstrap.min.js') ?>"></script>
-
 <script src="<?= asset_url('assets/js/app.js') ?>"></script>
 <script src="<?= asset_url('assets/js/utils/message.js') ?>"></script>
 <script src="<?= asset_url('assets/js/utils/validation.js') ?>"></script>

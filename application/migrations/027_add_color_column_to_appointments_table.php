@@ -38,7 +38,7 @@ class Migration_Add_color_column_to_appointments_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('color', 'appointments')) {
-            $this->dbforge->drop_column('appointments', 'color');
+            $this->drop_column('appointments', 'color');
         }
     }
 }

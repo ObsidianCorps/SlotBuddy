@@ -49,7 +49,7 @@ class Migration_Add_custom_fields_columns_to_users_table extends SB_Migration
             $field_name = 'custom_fields_' . $i;
 
             if ($this->db->field_exists($field_name, 'users')) {
-                $this->dbforge->drop_column('users', $field_name);
+                $this->drop_column('users', $field_name);
             }
         }
     }

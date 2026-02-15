@@ -33,7 +33,7 @@ class Migration_Modify_sync_period_columns extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('user_settings', $fields);
+        $this->modify_column('user_settings', $fields);
 
         $this->db->update(
             'user_settings',
@@ -76,7 +76,7 @@ class Migration_Modify_sync_period_columns extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('user_settings', $fields);
+        $this->modify_column('user_settings', $fields);
 
         $this->db->update(
             'user_settings',

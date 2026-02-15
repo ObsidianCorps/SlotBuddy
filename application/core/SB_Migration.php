@@ -54,6 +54,58 @@ class SB_Migration extends CI_Migration
     }
 
     /**
+     * Create a database table, stripping MySQL-specific attributes on SQLite.
+     *
+     * @param string $table Table name.
+     * @param bool $if_not_exists Whether to add IF NOT EXISTS.
+     * @param array $attributes Table attributes (e.g. ['engine' => 'InnoDB']).
+     *
+     * @return bool
+     */
+    protected function create_table(string $table, bool $if_not_exists = false, array $attributes = []): bool
+    {
+        if ($this->db->dbdriver === 'sqlite3') {
+            $attributes = [];
+        }
+
+        return $this->dbforge->create_table($table, $if_not_exists, $attributes);
+    }
+
+    /**
+     * Modify a table column, skipped on SQLite (uses type affinity, so column type changes are no-ops).
+     *
+     * @param string $table Table name.
+     * @param array $fields Column definitions.
+     *
+     * @return bool
+     */
+    protected function modify_column(string $table, array $fields): bool
+    {
+        if ($this->db->dbdriver === 'sqlite3') {
+            return TRUE;
+        }
+
+        return $this->dbforge->modify_column($table, $fields);
+    }
+
+    /**
+     * Drop a table column, skipped on SQLite (CI3's SQLite3 forge doesn't support it).
+     *
+     * @param string $table Table name.
+     * @param string $column Column name.
+     *
+     * @return bool
+     */
+    protected function drop_column(string $table, string $column): bool
+    {
+        if ($this->db->dbdriver === 'sqlite3') {
+            return TRUE;
+        }
+
+        return $this->dbforge->drop_column($table, $column);
+    }
+
+    /**
      * Execute a raw SQL query, skipping FK-related ALTER TABLE statements on SQLite.
      *
      * SQLite does not support ALTER TABLE ADD/DROP FOREIGN KEY. Since all raw queries

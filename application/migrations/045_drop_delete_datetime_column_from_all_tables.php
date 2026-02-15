@@ -34,7 +34,7 @@ class Migration_Drop_delete_datetime_column_from_all_tables extends SB_Migration
     {
         foreach ($this->tables as $table) {
             if ($this->db->field_exists('delete_datetime', $table)) {
-                $this->dbforge->drop_column($table, 'delete_datetime');
+                $this->drop_column($table, 'delete_datetime');
             }
         }
     }

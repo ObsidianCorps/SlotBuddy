@@ -5,10 +5,8 @@
 
     <title>Update | SlotBuddy</title>
 
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/themes/default.min.css') ?>">
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/pages/update.css') ?>">
+    <?= vite_assets('src/message.js') ?>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
 <header class="bg-white dark:bg-gray-800 shadow-sm mb-6">
@@ -31,8 +29,7 @@
                         You can now use the latest SlotBuddy version.
                     </p>
                     <a href="<?= site_url('about') ?>" class="sb-btn-primary inline-block">
-                        <i class="fas fa-wrench mr-2"></i>
-                        <?= lang('backend_section') ?>
+                                                <?= lang('backend_section') ?>
                     </a>
                 </div>
             <?php else: ?>
@@ -46,8 +43,7 @@
                         Please restore your database backup.
                     </p>
                     <a href="<?= site_url('login') ?>" class="sb-btn-primary inline-block">
-                        <i class="fas fa-wrench mr-2"></i>
-                        <?= lang('backend_section') ?>
+                                                <?= lang('backend_section') ?>
                     </a>
 
                     <p class="text-gray-700 dark:text-gray-300 mt-4">
@@ -67,7 +63,5 @@
     Powered by <a href="https://slotbuddy.org" class="text-primary-600 hover:text-primary-700 dark:text-primary-400">SlotBuddy</a>
 </footer>
 
-<script src="<?= asset_url('assets/vendor/@fortawesome-fontawesome-free/fontawesome.min.js') ?>"></script>
-<script src="<?= asset_url('assets/vendor/@fortawesome-fontawesome-free/solid.min.js') ?>"></script>
 </body>
 </html>

@@ -82,7 +82,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         $this->dbforge->add_key('id_users_provider');
         $this->dbforge->add_key('id_users_customer');
         $this->dbforge->add_key('id_services');
-        $this->dbforge->create_table('appointments', true, ['engine' => 'InnoDB']);
+        $this->create_table('appointments', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id' => [
@@ -138,7 +138,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
             ],
         ]);
         $this->dbforge->add_key('id', true);
-        $this->dbforge->create_table('roles', true, ['engine' => 'InnoDB']);
+        $this->create_table('roles', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id_users_secretary' => [
@@ -154,7 +154,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ]);
         $this->dbforge->add_key('id_users_secretary', true);
         $this->dbforge->add_key('id_users_provider', true);
-        $this->dbforge->create_table('secretaries_providers', true, ['engine' => 'InnoDB']);
+        $this->create_table('secretaries_providers', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id' => [
@@ -196,7 +196,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ]);
         $this->dbforge->add_key('id', true);
         $this->dbforge->add_key('id_service_categories');
-        $this->dbforge->create_table('services', true, ['engine' => 'InnoDB']);
+        $this->create_table('services', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id_users' => [
@@ -212,7 +212,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ]);
         $this->dbforge->add_key('id_users', true);
         $this->dbforge->add_key('id_services', true);
-        $this->dbforge->create_table('services_providers', true, ['engine' => 'InnoDB']);
+        $this->create_table('services_providers', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id' => [
@@ -233,7 +233,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ]);
         $this->dbforge->add_key('id', true);
         $this->dbforge->add_key('id_service_categories');
-        $this->dbforge->create_table('service_categories', true, ['engine' => 'InnoDB']);
+        $this->create_table('service_categories', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id' => [
@@ -253,7 +253,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
             ],
         ]);
         $this->dbforge->add_key('id', true);
-        $this->dbforge->create_table('settings', true, ['engine' => 'InnoDB']);
+        $this->create_table('settings', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id' => [
@@ -319,7 +319,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
         ]);
         $this->dbforge->add_key('id', true);
         $this->dbforge->add_key('id_roles');
-        $this->dbforge->create_table('users', true, ['engine' => 'InnoDB']);
+        $this->create_table('users', true, ['engine' => 'InnoDB']);
 
         $this->dbforge->add_field([
             'id_users' => [
@@ -379,7 +379,7 @@ class Migration_Specific_calendar_sync extends SB_Migration
             ],
         ]);
         $this->dbforge->add_key('id_users', true);
-        $this->dbforge->create_table('user_settings', true, ['engine' => 'InnoDB']);
+        $this->create_table('user_settings', true, ['engine' => 'InnoDB']);
 
         $this->execute(
             '

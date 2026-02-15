@@ -39,7 +39,7 @@ class Migration_Add_calendar_view_setting extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('calendar_view', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'calendar_view');
+            $this->drop_column('user_settings', 'calendar_view');
         }
     }
 }

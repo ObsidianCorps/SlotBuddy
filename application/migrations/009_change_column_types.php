@@ -115,7 +115,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('appointments', $fields);
+        $this->modify_column('appointments', $fields);
 
         // Roles
         $fields = [
@@ -157,7 +157,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('roles', $fields);
+        $this->modify_column('roles', $fields);
 
         // Secretary Provider
         $fields = [
@@ -173,7 +173,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('secretaries_providers', $fields);
+        $this->modify_column('secretaries_providers', $fields);
 
         // Services
         $fields = [
@@ -190,7 +190,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('services', $fields);
+        $this->modify_column('services', $fields);
 
         // Service Providers
         $fields = [
@@ -206,7 +206,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('services_providers', $fields);
+        $this->modify_column('services_providers', $fields);
 
         // Service Categories
         $fields = [
@@ -218,7 +218,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('service_categories', $fields);
+        $this->modify_column('service_categories', $fields);
 
         // Settings
         $fields = [
@@ -230,7 +230,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('settings', $fields);
+        $this->modify_column('settings', $fields);
 
         // Users
         $fields = [
@@ -247,7 +247,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('users', $fields);
+        $this->modify_column('users', $fields);
 
         // Users Settings
         $fields = [
@@ -258,7 +258,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('user_settings', $fields);
+        $this->modify_column('user_settings', $fields);
 
         // Add table constraints again.
         $this->execute(
@@ -455,7 +455,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('appointments', $fields);
+        $this->modify_column('appointments', $fields);
 
         // Roles
         $fields = [
@@ -497,7 +497,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('roles', $fields);
+        $this->modify_column('roles', $fields);
 
         // Secretary Provider
         $fields = [
@@ -513,7 +513,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('secretaries_providers', $fields);
+        $this->modify_column('secretaries_providers', $fields);
 
         // Services
         $fields = [
@@ -530,7 +530,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('services', $fields);
+        $this->modify_column('services', $fields);
 
         // Service Providers
         $fields = [
@@ -546,7 +546,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('services_providers', $fields);
+        $this->modify_column('services_providers', $fields);
 
         // Service Categories
         $fields = [
@@ -558,7 +558,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('service_categories', $fields);
+        $this->modify_column('service_categories', $fields);
 
         // Settings
         $fields = [
@@ -570,7 +570,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('settings', $fields);
+        $this->modify_column('settings', $fields);
 
         // Users
         $fields = [
@@ -587,7 +587,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('users', $fields);
+        $this->modify_column('users', $fields);
 
         // Users Settings
         $fields = [
@@ -598,7 +598,7 @@ class Migration_Change_column_types extends SB_Migration
             ],
         ];
 
-        $this->dbforge->modify_column('user_settings', $fields);
+        $this->modify_column('user_settings', $fields);
 
         // Add database constraints.
         $this->execute(

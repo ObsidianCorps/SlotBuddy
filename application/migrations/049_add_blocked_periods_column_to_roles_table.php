@@ -41,7 +41,7 @@ class Migration_Add_blocked_periods_column_to_roles_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('blocked_periods', 'roles')) {
-            $this->dbforge->drop_column('roles', 'blocked_periods');
+            $this->drop_column('roles', 'blocked_periods');
         }
     }
 }

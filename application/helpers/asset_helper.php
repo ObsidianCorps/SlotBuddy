@@ -24,17 +24,7 @@
  */
 function asset_url(string $uri = '', ?string $protocol = null): string
 {
-    $debug = config('debug');
-
     $cache_busting_token = '?' . config('cache_busting_token');
-
-    if (str_contains(basename($uri), '.js') && !str_contains(basename($uri), '.min.js') && !$debug) {
-        $uri = str_replace('.js', '.min.js', $uri);
-    }
-
-    if (str_contains(basename($uri), '.css') && !str_contains(basename($uri), '.min.css') && !$debug) {
-        $uri = str_replace('.css', '.min.css', $uri);
-    }
 
     return base_url($uri . $cache_busting_token, $protocol);
 }

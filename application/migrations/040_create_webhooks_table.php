@@ -68,7 +68,7 @@ class Migration_Create_webhooks_table extends SB_Migration
 
             $this->dbforge->add_key('id', true);
 
-            $this->dbforge->create_table('webhooks', true, ['engine' => 'InnoDB']);
+            $this->create_table('webhooks', true, ['engine' => 'InnoDB']);
         }
     }
 

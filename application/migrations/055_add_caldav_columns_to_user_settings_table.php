@@ -90,23 +90,23 @@ class Migration_Add_caldav_columns_to_user_settings_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('caldav_sync', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_sync');
+            $this->drop_column('user_settings', 'caldav_sync');
         }
 
         if ($this->db->field_exists('caldav_url', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_url');
+            $this->drop_column('user_settings', 'caldav_url');
         }
 
         if ($this->db->field_exists('caldav_username', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_username');
+            $this->drop_column('user_settings', 'caldav_username');
         }
 
         if ($this->db->field_exists('caldav_password', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_password');
+            $this->drop_column('user_settings', 'caldav_password');
         }
 
         if ($this->db->field_exists('caldav_calendar', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_calendar');
+            $this->drop_column('user_settings', 'caldav_calendar');
         }
     }
 }

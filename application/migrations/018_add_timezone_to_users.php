@@ -37,6 +37,6 @@ class Migration_Add_timezone_to_users extends SB_Migration
      */
     public function down(): void
     {
-        $this->dbforge->drop_column('users', 'timezone');
+        $this->drop_column('users', 'timezone');
     }
 }

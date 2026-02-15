@@ -2,6 +2,7 @@
 export default {
   content: [
     './application/views/**/*.php',
+    './assets/js/**/*.js',
     './src/**/*.{js,ts}',
   ],
   darkMode: 'class',

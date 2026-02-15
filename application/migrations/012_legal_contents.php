@@ -104,7 +104,7 @@ class Migration_Legal_contents extends SB_Migration
 
             $this->dbforge->add_key('id', true);
 
-            $this->dbforge->create_table('consents', true, ['engine' => 'InnoDB']);
+            $this->create_table('consents', true, ['engine' => 'InnoDB']);
         }
     }
 

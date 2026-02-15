@@ -40,7 +40,7 @@ class Migration_Add_service_availabilities_type extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('availabilities_type', 'services')) {
-            $this->dbforge->drop_column('services', 'availabilities_type');
+            $this->drop_column('services', 'availabilities_type');
         }
     }
 }

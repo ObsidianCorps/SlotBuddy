@@ -41,7 +41,7 @@ class Migration_Add_webhooks_column_to_roles_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('webhooks', 'roles')) {
-            $this->dbforge->drop_column('roles', 'webhooks');
+            $this->drop_column('roles', 'webhooks');
         }
     }
 }

@@ -28,7 +28,7 @@ class Migration_Rename_is_unavailable_column_of_appointments_table extends SB_Mi
                 ],
             ];
 
-            $this->dbforge->modify_column('appointments', $fields);
+            $this->modify_column('appointments', $fields);
         }
     }
 
@@ -47,7 +47,7 @@ class Migration_Rename_is_unavailable_column_of_appointments_table extends SB_Mi
                 ],
             ];
 
-            $this->dbforge->modify_column('appointments', $fields);
+            $this->modify_column('appointments', $fields);
         }
     }
 }

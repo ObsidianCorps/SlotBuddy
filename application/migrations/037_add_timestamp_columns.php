@@ -53,7 +53,7 @@ class Migration_Add_timestamp_columns extends SB_Migration
         foreach ($this->tables as $table) {
             foreach ($this->columns as $column) {
                 if ($this->db->field_exists($column, $table)) {
-                    $this->dbforge->drop_column($table, $column);
+                    $this->drop_column($table, $column);
                 }
             }
         }

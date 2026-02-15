@@ -49,11 +49,11 @@ class Migration_Create_appointment_location_column extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('location', 'appointments')) {
-            $this->dbforge->drop_column('appointments', 'location');
+            $this->drop_column('appointments', 'location');
         }
 
         if ($this->db->field_exists('location', 'services')) {
-            $this->dbforge->drop_column('services', 'location');
+            $this->drop_column('services', 'location');
         }
     }
 }

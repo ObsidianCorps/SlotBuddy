@@ -38,7 +38,7 @@ class Migration_Add_secret_header_column_to_webhooks_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('secret_header', 'webhooks')) {
-            $this->dbforge->drop_column('webhooks', 'secret_header');
+            $this->drop_column('webhooks', 'secret_header');
         }
     }
 }

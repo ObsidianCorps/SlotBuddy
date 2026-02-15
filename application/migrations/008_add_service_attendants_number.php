@@ -38,7 +38,7 @@ class Migration_Add_service_attendants_number extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('attendants_number', 'services')) {
-            $this->dbforge->drop_column('services', 'attendants_number');
+            $this->drop_column('services', 'attendants_number');
         }
     }
 }

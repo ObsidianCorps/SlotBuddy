@@ -37,7 +37,7 @@ class Migration_Add_ldap_dn_column_to_users_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('ldap_dn', 'users')) {
-            $this->dbforge->drop_column('users', 'ldap_dn');
+            $this->drop_column('users', 'ldap_dn');
         }
     }
 }

@@ -38,7 +38,7 @@ class Migration_Add_is_private_column_to_users_table extends SB_Migration
     public function down(): void
     {
         if ($this->db->field_exists('is_private', 'users')) {
-            $this->dbforge->drop_column('users', 'is_private');
+            $this->drop_column('users', 'is_private');
         }
     }
 }

@@ -54,7 +54,7 @@ class Migration_Create_blocked_periods_table extends SB_Migration
 
             $this->dbforge->add_key('id', true);
 
-            $this->dbforge->create_table('blocked_periods', true, ['engine' => 'InnoDB']);
+            $this->create_table('blocked_periods', true, ['engine' => 'InnoDB']);
         }
     }
 

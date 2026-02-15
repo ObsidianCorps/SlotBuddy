@@ -19,7 +19,7 @@ class Migration_Drop_caldav_calendar_column_from_user_settings_table extends SB_
     public function up(): void
     {
         if ($this->db->field_exists('caldav_calendar', 'user_settings')) {
-            $this->dbforge->drop_column('user_settings', 'caldav_calendar');
+            $this->drop_column('user_settings', 'caldav_calendar');
         }
     }
 

@@ -37,6 +37,6 @@ class Migration_Add_language_to_users extends SB_Migration
      */
     public function down(): void
     {
-        $this->dbforge->drop_column('users', 'language');
+        $this->drop_column('users', 'language');
     }
 }

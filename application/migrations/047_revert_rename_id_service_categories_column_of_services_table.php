@@ -31,7 +31,7 @@ class Migration_Revert_rename_id_service_categories_column_of_services_table ext
                 ],
             ];
 
-            $this->dbforge->modify_column('services', $fields);
+            $this->modify_column('services', $fields);
 
             $this->execute(
                 '
@@ -66,7 +66,7 @@ class Migration_Revert_rename_id_service_categories_column_of_services_table ext
                 ],
             ];
 
-            $this->dbforge->modify_column('services', $fields);
+            $this->modify_column('services', $fields);
 
             $this->execute(
                 '
